@@ -33,6 +33,8 @@
     p7zip-rar
     unrar
 
+    nvfetcher
+
     # TODO
     # qwen-code
   ];
