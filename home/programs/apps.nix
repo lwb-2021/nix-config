@@ -42,6 +42,10 @@
   */
   services.flatpak = {
     enable = true;
+    update.auto = {
+      enable = true;
+      onCalendar = "daily";
+    };
     remotes = [
       {
         name = "flathub";
@@ -63,6 +67,20 @@
       "com.wps.Office"
 
     ];
+    overrides = {
+      "global" = {
+        Context.filesystems = [
+          "xdg-config/fontconfig:ro"
+        ];
+      };
+      "com.wps.Office" = {
+        Environment = {
+          XMODIFIERS = "\"@im=fcitx\"";
+          QT_IM_MODULE = "fcitx5";
+          QT_FONT_DPI = "154";
+        };
+      };
+    };
   };
 
   xdg.mimeApps.defaultApplications = {
@@ -72,26 +90,30 @@
     GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
   };
 
-  data.directories =
-    let
-      appData = name: ".var/app/${name}/data";
-      appConfig = name: ".var/app/${name}/config";
-      appFile = name: filename: ".var/app/${name}/${filename}";
-      appAll = name: [
-        (appConfig name)
-        (appData name)
-      ];
-    in
-    [
+  data = {
+    directories =
+      let
+        appData = name: ".var/app/${name}/data";
+        appConfig = name: ".var/app/${name}/config";
+        appFile = name: filename: ".var/app/${name}/${filename}";
+        appAll = name: [
+          (appConfig name)
+          (appData name)
+        ];
+      in
+      [
 
-      (appFile "com.tencent.WeChat" "xwechat_files")
-      (appFile "com.tencent.WeChat" ".xwechat")
+        (appFile "com.tencent.WeChat" "xwechat_files")
+        (appFile "com.tencent.WeChat" ".xwechat")
 
-      (appConfig "com.qq.QQ")
+        (appConfig "com.qq.QQ")
 
-      (appData "com.tencent.wemeet")
+        (appData "com.tencent.wemeet")
 
-      (appConfig "com.wps.Office")
-    ]
-    ++ (appAll "com.dingtalk.DingTalk");
+        (appConfig "com.wps.Office")
+      ]
+      ++ (appAll "com.dingtalk.DingTalk");
+
+    local.directories = [ ".local/share/flatpak" ];
+  };
 }
