@@ -1,8 +1,6 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, ... }@params:
 let
-  utils = import ./utils {
-    inherit lib pkgs;
-  };
+  utils = import ./utils params;
 in
 {
   home.username = "lwb";
@@ -18,21 +16,13 @@ in
   };
   accounts.email.accounts = {
     "QQ" = (
-      utils.mkEmailAccount "QQ" {
+      utils.mail.configureClients "QQ" {
         address = "lwb-2021@qq.com";
         realName = "lwb";
         passwordCommand = "${lib.getExe pkgs.pass} Mail/QQ/imap";
         primary = true;
-        imap = {
-          host = "imap.qq.com";
-          port = 993;
-        };
-        smtp = {
-          tls.enable = true;
-          host = "smtp.qq.com";
-          port = 465; # 587
-        };
       }
+      // utils.mail.preset.qq
     );
   };
   imports = [

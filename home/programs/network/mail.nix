@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.mbsync = {
     enable = true;
@@ -12,6 +12,26 @@
     sidebar = {
       enable = true;
       shortPath = true;
+    };
+    settings = {
+    };
+  };
+  programs.notmuch = {
+    enable = true;
+    new = {
+      tags = [
+        "unread"
+        "inbox"
+      ];
+    };
+  };
+  programs.thunderbird = {
+    enable = true;
+    package = pkgs.noCuda.thunderbird;
+    profiles = {
+      ${config.home.username} = {
+        isDefault = true;
+      };
     };
   };
   accounts.email.maildirBasePath = "Mail";
