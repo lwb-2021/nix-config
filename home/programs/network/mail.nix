@@ -9,6 +9,10 @@
   };
   programs.neomutt = {
     enable = true;
+    sidebar = {
+      enable = true;
+      shortPath = true;
+    };
   };
   accounts.email.maildirBasePath = "Mail";
   data.directories = [
