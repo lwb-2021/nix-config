@@ -78,7 +78,6 @@ in
     ./programs/game/minecraft.nix
 
     ./programs/network/aria2
-    ./programs/network/chat.nix
     ./programs/network/firefox.nix
     ./programs/network/kdeconnect.nix
     ./programs/network/localsend.nix
