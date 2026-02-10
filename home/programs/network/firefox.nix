@@ -19,6 +19,11 @@
       "zh-CN"
       "en-US"
     ];
+
+    nativeMessagingHosts = with pkgs.noCuda; [
+      firefoxpwa
+    ];
+
     policies = {
       ExtensionSettings = {
         "{e2488817-3d73-4013-850d-b66c5e42d505}" = {
@@ -40,6 +45,7 @@
     };
     profiles.default = {
       isDefault = true;
+
       extensions = {
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -60,6 +66,8 @@
           browserpass
           zotero-connector
           web-clipper-obsidian
+
+          pwas-for-firefox
 
           # Security
           # noscript # 会导致B站崩溃以及拖慢网页加载速度
@@ -178,6 +186,26 @@
           border: none !important;
         }
       '';
+    };
+  };
+  programs.firefoxpwa = {
+    enable = true;
+    package = pkgs.noCuda.firefoxpwa;
+    profiles = {
+      "01KH2V889B2VY1C7ETBA791FEE" = {
+        sites."01KH2V889B667183MWV0K1QHCT" = {
+          name = "Cinny";
+          url = "https://app.cinny.in";
+          manifestUrl = "https://app.cinny.in/manifest.json";
+          desktopEntry = {
+            enable = true;
+            icon = pkgs.fetchurl {
+              url = "https://app.cinny.in/favicon.ico";
+              hash = "sha256-eU8N9PPAsYr5JHUlgqkm8AXrrTSQl7G2pU/nBA2Zb60=";
+            };
+          };
+        };
+      };
     };
   };
   xdg.mimeApps.defaultApplications = {
