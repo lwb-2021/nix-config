@@ -72,6 +72,8 @@ in
     ./programs/development/editors/code.nix
     ./programs/development/editors/neovim.nix
     ./programs/development/editors/idea.nix
+
+    ./programs/development/languages/java.nix
     ./programs/development/languages/python.nix
 
     ./programs/game/lutris.nix

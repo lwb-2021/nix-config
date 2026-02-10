@@ -17,9 +17,4 @@
     */
   ];
 
-  programs.java = {
-    enable = true;
-    package = pkgs.openjdk21;
-  };
-
 }

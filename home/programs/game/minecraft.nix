@@ -10,6 +10,7 @@
 
       # Change Java runtimes available to Prism Launcher
       jdks = [
+        jdk25
         jdk21
         jdk17
         jre8
