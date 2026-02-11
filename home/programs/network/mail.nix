@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.mbsync = {
     enable = true;
@@ -25,15 +25,9 @@
       ];
     };
   };
-  programs.thunderbird = {
-    enable = true;
-    package = pkgs.noCuda.thunderbird;
-    profiles = {
-      ${config.home.username} = {
-        isDefault = true;
-      };
-    };
-  };
+  home.file.".mailcap".text = ''
+    text/html; ${pkgs.w3m}/bin/w3m -I %{charset} -T text/html; copiousoutput;
+  '';
   accounts.email.maildirBasePath = "Mail";
   data.directories = [
     "Mail"
