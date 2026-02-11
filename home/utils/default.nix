@@ -14,9 +14,14 @@
         imapnotify = {
           enable = lib.mkDefault true;
           onNotify = "mbsync ${name}";
-          onNotifyPost = {
-            mail = lib.mkIf config.programs.noctalia-shell.enable "${lib.getExe pkgs.notmuch} new && ${lib.getExe pkgs.libnotify} '请查收邮件'";
-          };
+          onNotifyPost = lib.concatStringsSep " && " (
+            [
+              "${lib.getExe pkgs.notmuch} new"
+            ]
+            ++ [
+              ("${lib.getExe pkgs.libnotify} '请查收邮件'")
+            ]
+          );
           boxes = [ "INBOX" ];
         };
         mbsync = {
@@ -38,10 +43,6 @@
               }
             ];
           };
-        };
-        thunderbird = {
-          enable = lib.mkDefault true;
-          profiles = [ "${config.home.username}" ];
         };
       };
     preset = {
