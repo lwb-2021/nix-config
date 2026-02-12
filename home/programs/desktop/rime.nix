@@ -7,7 +7,9 @@
       fcitx5 = {
         addons = with pkgs; [
           fcitx5-gtk
-          fcitx5-rime
+          (fcitx5-rime.override {
+            rimeDataPkgs = with pkgs; [ rime-ice ];
+          })
         ];
         waylandFrontend = true;
         settings = {
@@ -21,4 +23,8 @@
       };
     };
   };
+  xdg.dataFile."fcitx5/rime/default.custom.yaml".text = ''
+    patch:
+      __include: rime_ice_suggestion:/
+  '';
 }
