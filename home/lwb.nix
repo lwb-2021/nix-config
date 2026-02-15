@@ -81,7 +81,7 @@ in
 
     ./programs/network/aria2
     ./programs/network/chat.nix
-    ./programs/network/firefox.nix
+    ./programs/network/firefox
     ./programs/network/kdeconnect.nix
     ./programs/network/syncthing.nix
     ./programs/network/mail.nix

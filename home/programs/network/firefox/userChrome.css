@@ -1,0 +1,13 @@
+#TabsToolbar {
+  display: none !important;
+}
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+  visibility: collapse !important;
+}
+#sidebar-splitter {
+  opacity: 0 !important;
+  min-width: 1px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
