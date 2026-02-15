@@ -1,15 +1,14 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   services.mihomo = {
     enable = true;
     tunMode = true;
     webui = pkgs.metacubexd;
     configFile = ./mihomo-config.yaml;
+  };
+  networking.firewall = {
+    trustedInterfaces = [ "tun0" ];
+    checkReversePath = "loose"; # Important
   };
   environment.systemPackages = [
     (pkgs.makeDesktopItem {

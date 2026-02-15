@@ -1,4 +1,4 @@
-{ ... }:
+{ config, lib, ... }:
 {
   security = {
     sudo = {
@@ -23,6 +23,11 @@
         }
         // gpg;
       };
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = lib.mkMerge [ ];
   };
 
 }
