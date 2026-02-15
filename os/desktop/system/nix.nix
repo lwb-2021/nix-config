@@ -7,6 +7,7 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "ca-derivations"
       ];
       substituters = [
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
