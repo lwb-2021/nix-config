@@ -38,8 +38,6 @@
     xfce4-exo
     xarchiver
 
-    wl-clipboard-rs
-
     ffmpegthumbnailer
   ];
 
