@@ -29,9 +29,6 @@
 
     #
 
-    # ags = {
-    #   url = "github:Aylur/ags";
-    # };
     my-neovim = {
       url = "github:lwb-2021/neovim-config";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +40,8 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      # url = "github:noctalia-dev/noctalia-shell";
+      url = "git+https://github.com/noctalia-dev/noctalia-shell.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
