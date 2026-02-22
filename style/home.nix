@@ -10,6 +10,7 @@
       colors.enable = false;
       flatpakSupport.enable = true;
     };
+    noctalia-shell.enable = false;
   };
   gtk = {
     theme = {
