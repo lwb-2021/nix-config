@@ -7,7 +7,7 @@
   programs.neovide = {
     enable = true;
     settings = {
-      maximized = true;
+      maximized = false;
       box-drawing = {
         mode = "native";
       };
