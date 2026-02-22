@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   i18n = {
     inputMethod = {
@@ -8,7 +8,9 @@
         addons = with pkgs; [
           fcitx5-gtk
           (fcitx5-rime.override {
-            rimeDataPkgs = with pkgs; [ rime-ice ];
+            rimeDataPkgs = with pkgs; [
+              rime-ice
+            ];
           })
         ];
         waylandFrontend = true;
@@ -23,8 +25,22 @@
       };
     };
   };
-  xdg.dataFile."fcitx5/rime/default.custom.yaml".text = ''
-    patch:
-      __include: rime_ice_suggestion:/
-  '';
+  xdg.dataFile = {
+    "fcitx5/rime/default.custom.yaml".text = ''
+      patch:
+        __include: rime_ice_suggestion:/
+    '';
+    "fcitx5/rime/default.yaml".text = "";
+    "fcitx5/rime/installation.yaml".text = ''
+      distribution_code_name: "fcitx-rime"
+      distribution_name: Rime
+      installation_id: "${config.home.username}-fcitx5"
+    '';
+  };
+  data.local = {
+    files = [ ".local/share/fcitx5/rime/user.yaml" ];
+    directories = [
+      ".local/share/fcitx5/rime/rime_ice.userdb"
+    ];
+  };
 }
