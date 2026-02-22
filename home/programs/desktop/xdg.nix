@@ -54,7 +54,7 @@
       let
         shebang = "#!/usr/bin/env bash";
         pre = lib.concatStringsSep "\n" (
-          config.autostart.prepareCommands ++ [ "${lib.getExe pkgs.xorg.xrdb} ~/.Xresources" ]
+          config.autostart.prepareCommands ++ [ "${lib.getExe pkgs.xrdb} ~/.Xresources" ]
         );
         post = lib.concatStringsSep "\n" config.autostart.commands;
 

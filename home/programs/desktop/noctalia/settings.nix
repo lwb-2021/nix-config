@@ -11,8 +11,11 @@
     name = "Shanghai";
   };
 
+  ui = {
+    panelBackgroundOpacity = 0.0;
+  };
+
   bar = {
-    backgroundOpacity = 0.0;
     showCapsule = false;
     capsuleOpacity = 0.0;
     floating = true;
