@@ -1,25 +1,20 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     slurp
     grim
-    ksnip
+    wl-clipboard-rs
   ];
-  home.file.".config/scripts/screenshot.sh" = {
-    text = ''
-      #!/usr/bin/env bash
-      SCREENSHOT_DIR="$XDG_PICTURES_DIR/Screenshots"
-      mkdir -p "$SCREENSHOT_DIR"
-      TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-      FILE="$SCREENSHOT_DIR/screenshot_$TIMESTAMP.png"
-      grim -g "$(slurp)" "$FILE"
-      if [ $? -eq 0 ]; then
-        notify-send "截图完成" "已保存至 $FILE"
-        ksnip $FILE
-        wl-copy < $FILE
-      fi
-    '';
-    executable = true;
+
+  programs.satty = {
+    enable = true;
+    settings = {
+      general = {
+        fullscreen = true;
+        copy-command = "wl-copy";
+      };
+    };
   };
-  wayland.screenshot.exec = "~/.config/scripts/screenshot.sh";
+
+  wayland.screenshot.exec = "grim -g \"$(slurp -o -r -c '#ff0000ff')\" -t ppm - | satty --filename - --fullscreen --output-filename $XDG_PICTURES_DIR/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png";
 }
