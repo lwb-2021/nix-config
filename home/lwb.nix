@@ -105,6 +105,7 @@ in
     ./programs/shell/cli-tools/jq.nix
     ./programs/shell/cli-tools/navi.nix
     ./programs/shell/cli-tools/ripgrep.nix
+    ./programs/shell/cli-tools/taskwarrior.nix
     ./programs/shell/cli-tools/yazi.nix
     ./programs/shell/cli-tools/zoxide.nix
 
