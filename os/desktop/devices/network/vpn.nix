@@ -14,7 +14,8 @@
         enable = true;
         settings = {
           peers = [
-            "tcp://public.easytier.cn:11010"
+            "udp://ramon2009.dpdns.org:11010"
+            "udp://ah.nkbpal.cn:11010"
           ];
           network_name = "722bf611-62c9-4b08-9128-1eff0b194b63";
           ipv4 = "10.126.126.1/24";
