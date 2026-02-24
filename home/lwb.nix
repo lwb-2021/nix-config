@@ -31,24 +31,7 @@ in
 
     ./data
 
-    ./programs/media/lyrics.nix
-    ./programs/media/mpd.nix
-    ./programs/media/mpris.nix
-    ./programs/media/mpv.nix
-    ./programs/media/ncmpcpp.nix
-
-    ./programs/apps.nix
-
-    ./programs/compatibility/wine.nix
-
-    ./programs/productivity/gimp.nix
-    ./programs/productivity/drawio.nix
-    ./programs/productivity/zettlr.nix
-
-    ./programs/daily/office.nix
-    ./programs/daily/note.nix
-    ./programs/daily/pandoc.nix
-    ./programs/daily/ebook.nix
+    # DE
 
     ./programs/desktop
     ./programs/desktop/niri
@@ -56,7 +39,6 @@ in
     ./programs/desktop/noctalia
 
     ./programs/desktop/apps/notification-push.nix
-
     ./programs/desktop/apps/nomacs.nix
 
     ./programs/desktop/apps/clipboard
@@ -68,6 +50,9 @@ in
 
     ./programs/desktop/rime.nix
 
+    ./programs/apps.nix
+
+    # Development
     ./programs/development
     ./programs/development/version-control.nix
     ./programs/development/editors/code.nix
@@ -76,6 +61,26 @@ in
 
     ./programs/development/languages/java.nix
     ./programs/development/languages/python.nix
+
+    #
+
+    ./programs/media/lyrics.nix
+    ./programs/media/mpd.nix
+    ./programs/media/mpris.nix
+    ./programs/media/mpv.nix
+    ./programs/media/ncmpcpp.nix
+
+    ./programs/compatibility/wine.nix
+
+    ./programs/graphics/gimp.nix
+    ./programs/graphics/drawio.nix
+
+    ./programs/text/office.nix
+    ./programs/text/note.nix
+    ./programs/text/pandoc.nix
+    ./programs/text/ebook.nix
+    ./programs/text/zettlr.nix
+    ./programs/text/zotero.nix
 
     ./programs/game/lutris.nix
     ./programs/game/minecraft.nix
@@ -86,8 +91,6 @@ in
     ./programs/network/kdeconnect.nix
     ./programs/network/syncthing.nix
     ./programs/network/mail.nix
-
-    ./programs/research/zotero.nix
 
     ./programs/security
 
