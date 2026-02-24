@@ -41,8 +41,9 @@ in
 
     ./programs/compatibility/wine.nix
 
-    ./programs/creation/gimp.nix
-    ./programs/creation/drawio.nix
+    ./programs/productivity/gimp.nix
+    ./programs/productivity/drawio.nix
+    ./programs/productivity/zettlr.nix
 
     ./programs/daily/office.nix
     ./programs/daily/note.nix
