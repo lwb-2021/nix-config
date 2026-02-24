@@ -105,7 +105,9 @@ in
     ./programs/shell/cli-tools/yazi.nix
     ./programs/shell/cli-tools/zoxide.nix
 
-    ./programs/study/anki.nix
+    ./programs/shell/cli-tools/others.nix
+
+    ./programs/education/anki.nix
   ];
 
 }

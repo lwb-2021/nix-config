@@ -11,9 +11,10 @@
       auto_sync = true;
       sync_frequency = "5m";
       history_filter = [
-        "^z\s+"
+        "^z\\s+"
         ".*/nix/store/.+"
-        "^python \./"
+        "^python"
+        "^ydict"
       ];
       store_failed = false;
       secrets_filter = true;
