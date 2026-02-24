@@ -75,7 +75,6 @@ in
     ./programs/graphics/gimp.nix
     ./programs/graphics/drawio.nix
 
-    ./programs/text/office.nix
     ./programs/text/note.nix
     ./programs/text/pandoc.nix
     ./programs/text/ebook.nix
