@@ -36,7 +36,7 @@
   xdg.autostart.entries = [
     "${pkgs.keepassxc}/share/applications/org.keepassxc.KeePassXC.desktop"
   ];
-  data.directories = [
+  data.persistence.directories = [
     ".cache/keepassxc"
   ];
 }

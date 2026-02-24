@@ -29,7 +29,7 @@
     text/html; ${pkgs.w3m}/bin/w3m -I %{charset} -T text/html; copiousoutput;
   '';
   accounts.email.maildirBasePath = "Mail";
-  data.directories = [
+  data.persistence.directories = [
     "Mail"
   ];
 }

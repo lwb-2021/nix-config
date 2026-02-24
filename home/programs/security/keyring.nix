@@ -18,5 +18,5 @@
     keyutils
     seahorse
   ];
-  data.directories = [ ".local/share/keyrings" ];
+  data.persistence.directories = [ ".local/share/keyrings" ];
 }

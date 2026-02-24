@@ -7,17 +7,19 @@
 {
 
   imports = [
-    ./home-data-preclude.nix
+    ./preclude.nix
     ./rclone.nix
   ];
 
   options = with lib; {
     data = {
-      directories = mkOption {
-        type = types.listOf types.anything;
-      };
-      files = mkOption {
-        type = types.listOf types.anything;
+      persistence = {
+        directories = mkOption {
+          type = types.listOf types.anything;
+        };
+        files = mkOption {
+          type = types.listOf types.anything;
+        };
       };
       local = {
         directories = mkOption {
@@ -30,27 +32,19 @@
     };
   };
   config = {
-    data = {
-      directories = lib.mkDefault [ ];
-      files = lib.mkDefault [ ];
-      local = {
-        directories = lib.mkDefault [ ];
-        files = lib.mkDefault [ ];
-      };
-    };
     home.persistence = {
       "/nix/persistence" = {
         hideMounts = true;
         directories = [
 
         ]
-        ++ config.data.directories;
+        ++ config.data.persistence.directories;
         files = [
 
         ]
-        ++ config.data.files;
+        ++ config.data.persistence.files;
       };
-      "/nix/persistence/local" = {
+      "/nix/local" = {
         hideMounts = true;
         directories = [
           ".cache/rclone"

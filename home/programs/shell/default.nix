@@ -50,7 +50,7 @@ in
     enable = true;
     historyControl = [ "ignorespace" ];
   };
-  data = {
+  data.persistence = {
     files = [
       {
         file = ".local/share/fish/fish_history";

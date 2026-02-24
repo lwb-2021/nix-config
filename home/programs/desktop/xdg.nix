@@ -17,7 +17,7 @@
   };
 
   config = {
-    data.directories = [
+    data.persistence.directories = [
       "Music"
       "Documents"
     ];

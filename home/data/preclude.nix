@@ -1,10 +1,12 @@
 { lib, ... }@params:
 {
   data = {
-    directories = [
+    persistence = {
+      directories = [
 
-    ];
-    files = [ ];
+      ];
+      files = [ ];
+    };
     local = {
       directories = lib.mkMerge [
         [
