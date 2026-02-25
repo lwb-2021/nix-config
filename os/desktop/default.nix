@@ -6,16 +6,14 @@
 
 {
   imports = [
+    ../universal/bootloader.nix
     ../universal/mirrors.nix
-
-    ../universal/wayland.nix
-
     ../universal/security.nix
+    ../universal/wayland.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./system/bootloader.nix
     ./system/kernel.nix
     ./system/nix.nix
     ./system/filesystem.nix

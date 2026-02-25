@@ -11,8 +11,9 @@
         enable = true;
         efiSupport = true;
         maxGenerations = 4;
-        secureBoot.enable = true;
-        enrollConfig = true;
+        secureBoot = {
+          enable = true;
+        };
         extraEntries = ''
           /Windows 11
               protocol: efi
@@ -26,6 +27,7 @@
         enable = true;
       };
     };
+    # UKI is automatically enabled
   };
   environment.systemPackages = with pkgs; [
     sbctl
