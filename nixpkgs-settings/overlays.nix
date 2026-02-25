@@ -1,4 +1,4 @@
-{ inputs }:
+{ inputs, ... }:
 [
   (final: prev: {
     nur = import inputs.nur {
@@ -13,6 +13,15 @@
     };
   })
   (final: prev: {
+    thunar-archive-plugin = prev.thunar-archive-plugin.overrideAttrs (_: {
+      postInstall = ''
+        cp ${prev.xarchiver}/libexec/thunar-archive-plugin/* $out/libexec/thunar-archive-plugin/
+      '';
+    });
+
+  })
+  (final: prev: {
+
   })
   (final: prev: {
   })
