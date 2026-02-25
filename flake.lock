@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768135262,
-        "narHash": "sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY=",
+        "lastModified": 1769996383,
+        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "80daad04eddbbf5a4d883996a73f3f542fa437ac",
+        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
         "type": "github"
       },
       "original": {
@@ -252,11 +252,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770382263,
-        "narHash": "sha256-9Cm/7lV9IW686azWj+FpmGvAMMcwCyViKMhAsujoNvs=",
+        "lastModified": 1771911767,
+        "narHash": "sha256-GPa5cTikOuE3V+BIqP12o4jDH8UVLnrN+PA4Obmog1c=",
         "owner": "lwb-2021",
         "repo": "neovim-config",
-        "rev": "c085a1ee87f5969906093ed169c22b19f8223184",
+        "rev": "7bf4d41fe3cb626a6ccb7bb591a8edbfb6b5ec9d",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769904653,
-        "narHash": "sha256-ZDVBonlM1KWDrgmiWQiUffHkxrlmb7ycA6c/BzZO2nw=",
+        "lastModified": 1770595508,
+        "narHash": "sha256-d81J55C/ctzfofd10e4k8Bldm1eXKuVaQAewbZPjHN4=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "ff53ef2634c6fe3af40c2ac893fd2e486e5fe353",
+        "rev": "58b19445f29efe3b94db874fc64407099de0f0f7",
         "type": "github"
       },
       "original": {
@@ -292,11 +292,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1769867454,
-        "narHash": "sha256-lJWmcmmbUlzWNtIU7klxvBzTDzeAThcgoCPAqMn46o0=",
+        "lastModified": 1770587030,
+        "narHash": "sha256-2CaAx32akEOjUwkKnkvMWsHLhMvoIZ/SsV4ByiEIxfg=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "270c7b46afabdb16a833f67747067b769901f269",
+        "rev": "19379d1255554041eb6d67423cfa83ca23e5be42",
         "type": "github"
       },
       "original": {
@@ -408,10 +408,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1769966032,
-        "narHash": "sha256-2Ywi7GQhdAJB9FAPBujz45WuU7Fkx1gs5Cb76pDJtJw=",
+        "lastModified": 1770644469,
+        "narHash": "sha256-1ouq3yqeqzT6LBo9+sOixR2t638eM76a2ePsZ5ZKs5g=",
         "ref": "refs/heads/main",
-        "rev": "ec73f89b28edacc6e8dd03b135b28705411c38bc",
+        "rev": "c4d8ae77b168c3035fb634efcb25f522b7f38fbc",
         "shallow": true,
         "type": "git",
         "url": "https://codeberg.org/NicoElbers/nixPatch-nvim"
