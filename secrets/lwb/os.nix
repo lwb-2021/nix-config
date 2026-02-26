@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   sops.age.keyFile = "/data/persistence/keys.txt";
   sops.defaultSopsFile = ./files/os.yaml;

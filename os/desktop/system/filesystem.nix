@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, ... }:
 {
   fileSystems."/" = lib.mkForce {
     device = "tmpfs";
