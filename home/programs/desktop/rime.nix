@@ -31,12 +31,14 @@
         __include: rime_ice_suggestion:/
     '';
     "fcitx5/rime/default.yaml".text = "";
-    "fcitx5/rime/installation.yaml".text = ''
+  };
+  home.tmpfiles.dataFile."fcitx5/rime/installation.yaml".source =
+    "${pkgs.writeText "fcitx5_rime_installation.yaml" ''
       distribution_code_name: "fcitx-rime"
       distribution_name: Rime
       installation_id: "${config.home.username}-fcitx5"
-    '';
-  };
+    ''}";
+
   data.local = {
     files = [ ".local/share/fcitx5/rime/user.yaml" ];
     directories = [
