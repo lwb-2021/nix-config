@@ -88,7 +88,6 @@ in
     ./programs/network/chat.nix
     ./programs/network/firefox
     ./programs/network/kdeconnect.nix
-    ./programs/network/syncthing.nix
     ./programs/network/mail.nix
 
     ./programs/security

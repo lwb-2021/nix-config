@@ -1,5 +1,9 @@
 { config, ... }:
 {
+  data.local.directories = [
+    ".cache/rclone"
+  ];
+
   programs.rclone = {
     enable = true;
     remotes = {
@@ -28,10 +32,10 @@
       };
       remote-raw = {
         config = {
-          # type = "union";
-          # upstreams = "onedrive:/ jianguoyun:/:writeback";
-          type = "alias";
-          remote = "onedrive:/";
+          type = "union";
+          upstreams = "onedrive:/ jianguoyun:/:writeback";
+          # type = "alias";
+          # remote = "onedrive:/";
         };
       };
       jianguoyun = {

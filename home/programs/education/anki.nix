@@ -15,5 +15,6 @@
       keyFile = config.sops.secrets."anki/password".path;
     };
   };
+  data.local.directories = [ ".local/share/Anki2" ];
 
 }

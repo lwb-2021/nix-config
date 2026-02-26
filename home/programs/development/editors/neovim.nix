@@ -17,4 +17,5 @@
     "text/plain" = "neovide.desktop";
     "text/markdown" = "neovide.desktop";
   };
+  data.local.directories = [ ".local/share/nvim" ];
 }

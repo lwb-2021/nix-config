@@ -6,4 +6,8 @@
 
     readest
   ];
+  data.local.directories = [
+    ".local/share/com.bilingify.readest"
+    ".config/com.bilingify.readest"
+  ];
 }

@@ -24,4 +24,5 @@
       };
     };
   };
+  data.local.directories = [ ".local/share/atuin" ];
 }

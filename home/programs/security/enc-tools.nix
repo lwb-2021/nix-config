@@ -36,6 +36,12 @@
   xdg.configFile."pam-gnupg".text = ''
     EFE4C9541F27C5A3D6A848720893F1A121010CDF
   '';
+  data = {
+    local.directories = [
+      ".gnupg" # TODO
+    ];
+    persistence.directories = [ ".config/sops" ]; # TODO
+  };
 
   home.packages = with pkgs; [
     age

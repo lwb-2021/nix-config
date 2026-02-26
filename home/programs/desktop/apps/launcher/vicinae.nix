@@ -8,6 +8,7 @@ let
   localSystem = pkgs.stdenv.hostPlatform.system;
 in
 {
+  data.persistence.directories = [ ".local/share/vicinae" ];
   sops.templates."vicinae.json".content = ''
     {
     	"providers": {

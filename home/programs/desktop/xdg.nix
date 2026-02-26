@@ -17,10 +17,21 @@
   };
 
   config = {
-    data.persistence.directories = [
-      "Music"
-      "Documents"
-    ];
+    data = {
+      persistence.directories = [
+        "Music"
+        "Documents"
+        "Public"
+      ];
+      local.directories = [
+        "Desktop"
+        "Downloads"
+        "Pictures"
+        "Videos"
+
+        ".local/share/applications"
+      ];
+    };
     xdg = {
       autostart.enable = true;
       mime.enable = true;

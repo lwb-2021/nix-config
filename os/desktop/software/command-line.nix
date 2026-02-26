@@ -41,6 +41,6 @@
 
   programs.nh = {
     enable = true;
-    flake = "/home/lwb/NixOS-Configuration";
+    flake = "/home/lwb/Configurations/nix-config";
   };
 }

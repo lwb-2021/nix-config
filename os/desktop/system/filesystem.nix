@@ -15,8 +15,7 @@
     ];
   };
 
-  environment.persistence."/nix/persistence" = {
-    # 不让这些映射的 mount 出现在文件管理器的侧边栏中
+  environment.persistence."/data/persistence/system" = {
     hideMounts = true;
 
     directories = [
@@ -37,7 +36,11 @@
     enable = true;
   };
 
-  services.userborn.enable = true;
+  services.userborn = {
+    # enable = true;
+    # TODO
+    # Wait for https://github.com/nix-community/impermanence/pull/233 to be merged
+  };
 
   environment.variables.NIX_REMOTE = "daemon";
 

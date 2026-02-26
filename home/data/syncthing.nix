@@ -13,20 +13,22 @@
         "phone" = {
           id = "3BI7JEJ-BWL5V3R-SSHNDPI-JNR5FCU-3YPHXKL-ZQSFKD5-P36NRWQ-RIRGLQ2";
           addresses = [
-            "tcp://192.168.10.5:22000"
+            "tcp://10.126.126.254:22000"
+            "dynamic"
           ];
         };
       };
-      folders = {
-        "~/Documents/Syncthing" = {
-          id = "default";
+      folders =
+        lib.genAttrs (builtins.map (x: "~/" + x) config.data.sync.folders) (name: {
+          id = lib.toLower (builtins.baseNameOf name);
           devices = [ "phone" ];
+        })
+        // {
+          "~/Documents/Syncthing" = {
+            id = "default";
+            devices = [ "phone" ];
+          };
         };
-        "~/Documents/Obsidian" = {
-          id = "obsidian";
-          devices = [ "phone" ];
-        };
-      };
 
     };
   };

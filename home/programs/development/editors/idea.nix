@@ -5,4 +5,9 @@
       forceWayland = true;
     })
   ];
+  data.local.directories = [
+    ".local/share/JetBrains"
+    ".config/JetBrains"
+  ];
+
 }

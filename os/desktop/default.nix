@@ -115,6 +115,7 @@
   # };
   users.users.lwb = {
     isNormalUser = true;
+    createHome = true;
     extraGroups = [
       "wheel"
       "gamemode"

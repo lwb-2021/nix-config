@@ -12,4 +12,5 @@
     })
     fluffychat
   ];
+  data.local.directories = [ ".local/share/chat.fluffy.fluffychat" ];
 }

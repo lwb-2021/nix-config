@@ -45,6 +45,7 @@
   };
 
   fileSystems."/home" = {
+    enable = false;
     device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
     fsType = "btrfs";
     neededForBoot = true;
@@ -55,7 +56,16 @@
       "subvol=@home"
     ];
   };
-
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
+    fsType = "btrfs";
+    options = [
+      "ssd"
+      "noatime"
+      "compress=zstd"
+      "subvol=@data"
+    ];
+  };
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
     fsType = "btrfs";

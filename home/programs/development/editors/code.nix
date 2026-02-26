@@ -3,6 +3,8 @@
   ...
 }:
 {
+  # TODO
+  data.local.directories = [ ".config/VSCodium" ];
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;

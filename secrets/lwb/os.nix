@@ -5,7 +5,7 @@
   ...
 }:
 {
-  sops.age.keyFile = "/nix/persistence/keys.txt";
+  sops.age.keyFile = "/data/persistence/keys.txt";
   sops.defaultSopsFile = ./files/os.yaml;
   # Or
   # fileSystems."/etc/ssh".neededForBoot = true;

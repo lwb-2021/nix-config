@@ -18,4 +18,5 @@
     })
     gamemode
   ];
+  data.local.directories = [ ".local/share/PrismLauncher" ];
 }
