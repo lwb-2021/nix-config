@@ -25,9 +25,21 @@
       };
   };
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = lib.mkMerge [ ];
-  };
+  networking.firewall =
+    let
+      kdeconnect = {
+        from = 1714;
+        to = 1764;
+      };
+    in
+    {
+      enable = true;
+      allowedTCPPortRanges = [
+        kdeconnect
+      ];
+      allowedUDPPortRanges = [
+        kdeconnect
+      ];
+    };
 
 }
