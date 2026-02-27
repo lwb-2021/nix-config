@@ -37,18 +37,9 @@ in
 
     ./programs/desktop
     ./programs/desktop/niri
-
     ./programs/desktop/noctalia
 
-    ./programs/desktop/apps/notification-push.nix
-    ./programs/desktop/apps/nomacs.nix
-
-    ./programs/desktop/apps/clipboard
-    ./programs/desktop/apps/launcher/vicinae.nix
-    ./programs/desktop/apps/screenshot/grim.nix
-    ./programs/desktop/apps/terminal/wezterm.nix
-    ./programs/desktop/apps/wallpaper
-    ./programs/desktop/apps/wallpaper/swww.nix
+    ./programs/basic
 
     ./programs/desktop/rime.nix
 
