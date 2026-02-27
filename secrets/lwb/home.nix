@@ -12,6 +12,8 @@
       "restic/password" = { };
       "anki/password" = { };
       "vicinae/nix/github-token" = { };
+
+      "ssh/keys/github" = { };
     };
   };
 
