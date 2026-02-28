@@ -35,8 +35,7 @@
 
     nvfetcher
 
-    # TODO
-    # qwen-code
+    qwen-code
   ];
 
   programs.nh = {
