@@ -8,7 +8,7 @@ let
   localSystem = pkgs.stdenv.hostPlatform.system;
 in
 {
-  data.persistence.directories = [ ".local/share/vicinae" ];
+  data.local.directories = [ ".local/share/vicinae" ]; # file-indexer.db is too large
   sops.templates."vicinae.json".content = ''
     {
     	"providers": {

@@ -11,12 +11,12 @@
       directories = lib.mkMerge [
         [
           ".pki/nssdb" # TODO
-          ".config/dconf" # TODO
 
           ".cache/fontconfig"
           ".cache/mesa_shader_cache"
           ".cache/nix"
           ".cache/nvidia"
+          ".cache/tealdeer" # TODO: move to tealdeer
 
           ".local/share/icons/hicolor" # TODO
 
