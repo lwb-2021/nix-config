@@ -4,6 +4,6 @@
     enable = true;
   };
   programs.fish.shellInitLast = ''
-    status is-interactive; and fastfetch
+    status is-interactive; and test $TMUX; and fastfetch
   '';
 }

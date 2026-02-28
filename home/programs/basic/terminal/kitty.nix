@@ -13,7 +13,7 @@ in
     enable = true;
     settings = {
       disable_ligatures = "never";
-      shell = "${lib.getExe pkgs.fish} -c ${attach-to-tmux}";
+      shell = "${lib.getExe pkgs.fish} -i -c ${attach-to-tmux}";
       confirm_os_window_close = "0";
     };
   };
