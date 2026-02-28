@@ -5,6 +5,9 @@
     shell = lib.getExe pkgs.fish;
 
     mouse = true;
+    clock24 = true;
+    historyLimit = 50000;
+
     extraConfig = ''
       set -g allow-passthrough on
     '';
@@ -13,6 +16,12 @@
       {
         plugin = tmux-which-key;
         extraConfig = "set -g @tmux-which-key-xdg-enable 1";
+      }
+      {
+        plugin = prefix-highlight;
+        extraConfig = ''
+          set -g status-right '#{prefix_highlight} | %Y-%m-%d %H:%M'
+        '';
       }
     ];
   };
