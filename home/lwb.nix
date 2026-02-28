@@ -86,6 +86,7 @@ in
     ./programs/security
 
     ./programs/shell
+    ./programs/shell/tmux.nix
     ./programs/shell/atuin.nix
     ./programs/shell/pay-respect.nix
     ./programs/shell/starship.nix

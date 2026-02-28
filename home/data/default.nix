@@ -50,7 +50,6 @@
         directories = config.data.local.directories;
         files = config.data.local.files;
       };
-
     };
 
     services.restic = {
@@ -62,12 +61,11 @@
           paths = [
             "/data/persistence/home/${config.home.username}"
           ];
-          repository = "rclone:remote-raw:备份/home/${config.home.username}";
+          repository = "/data/backup/home/${config.home.username}";
           extraBackupArgs = [ "--compression auto" ];
           pruneOpts = [ "--keep-last 4" ];
         };
       };
     };
-
   };
 }

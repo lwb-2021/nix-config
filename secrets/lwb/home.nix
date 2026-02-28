@@ -14,6 +14,7 @@
       "vicinae/nix/github-token" = { };
 
       "ssh/keys/github" = { };
+      "syncthing/passwords/backup" = { };
     };
   };
 

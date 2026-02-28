@@ -47,5 +47,8 @@
       CacheDirectory = "nix";
     };
   };
+  systemd.tmpfiles.rules = [
+    "d /data/backup - 0777 root root -"
+  ];
 
 }
