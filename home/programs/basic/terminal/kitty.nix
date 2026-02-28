@@ -14,6 +14,7 @@ in
     settings = {
       disable_ligatures = "never";
       shell = "${lib.getExe pkgs.fish} -c ${attach-to-tmux}";
+      confirm_os_window_close = "0";
     };
   };
   programs.tmux.terminal = "xterm-kitty";
