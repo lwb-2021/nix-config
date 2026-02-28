@@ -10,7 +10,6 @@
     ../universal/mirrors.nix
     ../universal/security.nix
     ../universal/wayland.nix
-    ../universal/syncthing.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix

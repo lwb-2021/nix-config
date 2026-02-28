@@ -57,7 +57,6 @@
       folders = [
         "Configurations"
       ];
-      syncthing.targets = [ "phone" ];
     };
   };
 }

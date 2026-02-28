@@ -8,6 +8,5 @@
   environment.systemPackages = [ pkgs.sops ];
   sops.secrets = {
     "easytier/default/secret-env" = { };
-    "syncthing/passwords/backup" = { };
   };
 }
