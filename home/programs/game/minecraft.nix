@@ -5,7 +5,6 @@
       # Add binary required by some mod
       additionalPrograms = [
         ffmpeg
-        glfw3
       ];
 
       # Change Java runtimes available to Prism Launcher
