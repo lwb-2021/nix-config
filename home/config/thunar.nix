@@ -10,7 +10,7 @@
         	<name>在此处打开终端</name>
         	<submenu></submenu>
         	<unique-id>1745653556796274-1</unique-id>
-        	<command>wezterm start --cwd %f</command>
+        	<command>kitty -1 -o shell=fish -d %f</command>
         	<description>在此处打开终端</description>
         	<range></range>
         	<patterns>*</patterns>
