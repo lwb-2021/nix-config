@@ -8,6 +8,7 @@
   imports = [
     ../universal/bootloader.nix
     ../universal/mirrors.nix
+    ../universal/proxy
     ../universal/security.nix
     ../universal/wayland.nix
 
@@ -27,7 +28,6 @@
     ./devices/power/tlp.nix
 
     ./devices/network/network.nix
-    ./devices/network/proxy
     ./devices/network/openssh.nix
     ./devices/network/vpn.nix
 
