@@ -51,32 +51,35 @@ sniffer:
     - "+.apple.com"
 
 
-proxies:
-  - name: "tor"
-    type: socks5
-    server: "127.0.0.1"
-    port: 9050
-  - name: "direct"
-    type: direct
-    udp: true
-
 proxy-providers:
   freenodes:
     type: "http"
     url: "https://gist.githubusercontent.com/shuaidaoya/9e5cf2749c0ce79932dd9229d9b4162b/raw/mihomo.yaml"
+    interval: 43200
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      timeout: 5000
+      timeout: 300
       lazy: true
       expected-status: 204
 
 proxy-groups:
   - name: Proxy
+    type: select 
+    proxies:
+    - DIRECT
+    - Select
+    - Balance
+
+  - name: Select
     type: select
-    include-all-proxies: true
-    udp: true
+    use:
+      - freenodes
+
+  - name: Balance
+    type: load-balance
+    consistent-hashing: true
     use:
      - freenodes
 
