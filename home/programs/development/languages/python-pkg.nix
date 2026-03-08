@@ -4,7 +4,10 @@ pkgs.python3.withPackages (
     pandas
     matplotlib
     numpy
+
     requests
+    beautifulsoup4
+    lxml
 
     tabulate
 
