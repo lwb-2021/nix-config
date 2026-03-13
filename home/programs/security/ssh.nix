@@ -37,9 +37,9 @@
       #!/bin/bash
       key=$(basename "$1" | tr -d "'" | tr -d ":" | tr -d " ")
       pass=$(pass show "ssh/passphrases/$key" 2>/dev/null)
-      if [ -z "$pass" ]; then
+      if [ $1 =~ *fingerprint* || -z "$pass" ]; then
           if [ -n "$WAYLAND_DISPLAY" ]; then
-              pass=$(zenity --entry --hide-text --text="请输入 SSH 密钥 $key 的密码：")
+              pass=$(zenity --entry --hide-text --text=$1)
           else
               read -s -p $1 pass
               echo
