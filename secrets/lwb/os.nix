@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   sops.age.keyFile = "/data/persistence/keys.txt";
+  fileSystems."/data".neededForBoot = true;
+
   sops.defaultSopsFile = ./files/os.yaml;
-  # Or
-  # fileSystems."/etc/ssh".neededForBoot = true;
 
   environment.systemPackages = [ pkgs.sops ];
   sops.secrets = {
