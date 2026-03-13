@@ -1,10 +1,9 @@
-{ config, ... }:
+{ ... }:
 {
   programs.zoxide = {
     enable = true;
-
   };
-  data.local.directories = [
-    ".config/zoxide" # TODO: maybe sync
+  data.persistence.directories = [
+    ".local/share/zoxide"
   ];
 }
