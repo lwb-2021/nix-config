@@ -1,8 +1,11 @@
-{ config, lib, ... }:
+{ ... }:
 {
   security = {
     sudo = {
       enable = true;
+      extraConfig = ''
+        Defaults pwfeedback
+      '';
     };
 
     pam.services =
