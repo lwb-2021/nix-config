@@ -1,7 +1,7 @@
 keys:
   - &lwb_age age10qn8asrzgzjlhqf6lpmph5aprky4s2ykanhuuhexkqlpaumu0dls6t6nzs
 creation_rules:
-  - path_regex: secrets/.+/files/[^/]+\.(yaml|json|env|ini|txt)$
+  - path_regex: secrets/lwb/files/[^/]+\.(yaml|json|env|ini|txt)$
     key_groups:
     - age:
       - *lwb_age
