@@ -59,7 +59,7 @@ in
         };
       };
       extensions = with exts; [
-        # bluetooth
+        bluetooth
         firefox
         niri
         nix
