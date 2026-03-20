@@ -11,6 +11,7 @@
       flatpakSupport.enable = true;
     };
     noctalia-shell.enable = false;
+    obsidian.enable = false;
   };
   gtk = {
     theme = {
