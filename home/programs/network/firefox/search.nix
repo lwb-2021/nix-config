@@ -1,8 +1,14 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }@params:
 {
 
-  default = "bing";
+  default = if (params ? osConfig && params.osConfig.services.searx.enable) then "searx" else "bing";
   engines = {
+    searx = lib.mkIf (params ? osConfig && params.osConfig.services.searx.enable) {
+      name = "SearxNG";
+      urls = [
+        { template = "http://127.0.0.1:8080/search?q={searchTerms}"; }
+      ];
+    };
     nix-packages = {
       name = "Nix Packages";
       urls = [

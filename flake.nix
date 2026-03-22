@@ -106,6 +106,7 @@
           ./os/desktop
 
           ./services/openlist
+          ./services/searx
 
           {
 
