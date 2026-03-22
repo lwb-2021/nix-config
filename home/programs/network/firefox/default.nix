@@ -53,26 +53,6 @@
       userChrome = builtins.readFile ./userChrome.css;
     };
   };
-  programs.firefoxpwa = {
-    enable = true;
-    package = pkgs.noCuda.firefoxpwa;
-    profiles = {
-      "01KH2V889B2VY1C7ETBA791FEE" = {
-        sites."01KH2V889B667183MWV0K1QHCT" = {
-          name = "Cinny";
-          url = "https://app.cinny.in";
-          manifestUrl = "https://app.cinny.in/manifest.json";
-          desktopEntry = {
-            enable = true;
-            icon = pkgs.fetchurl {
-              url = "https://app.cinny.in/favicon.ico";
-              hash = "sha256-eU8N9PPAsYr5JHUlgqkm8AXrrTSQl7G2pU/nBA2Zb60=";
-            };
-          };
-        };
-      };
-    };
-  };
   xdg.mimeApps.defaultApplications = {
     "text/html" = "firefox.desktop";
     "x-scheme-handler/http" = "firefox.desktop";
