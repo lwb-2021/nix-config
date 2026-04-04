@@ -19,7 +19,7 @@ in
       cursor_trail_decay = "0.1 0.4";
       pixel_scroll = "yes";
 
-      shell = "${lib.getExe pkgs.fish} -i -c ${attach-to-tmux}";
+      shell = "fish";
 
       initial_window_width = "179c"; # $COLUMNS
       initial_window_height = "45c"; # $LINES
@@ -28,5 +28,5 @@ in
     };
   };
   programs.tmux.terminal = "xterm-kitty";
-  wayland.terminal.exec = "kitty -1";
+  wayland.terminal.exec = "kitty -1 ${lib.getExe pkgs.fish} -i -c ${attach-to-tmux}";
 }
