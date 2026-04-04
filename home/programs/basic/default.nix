@@ -6,7 +6,7 @@
     ./screenshot/grim.nix
     ./terminal/kitty.nix
     ./wallpaper
-    ./wallpaper/swww.nix
+    ./wallpaper/awww.nix
     ./nomacs.nix
     ./notification-push.nix
   ];
