@@ -13,6 +13,14 @@
         maxGenerations = 4;
         secureBoot = {
           enable = true;
+          autoGenerateKeys = true;
+          autoEnrollKeys = {
+            enable = true;
+            extraArgs = [
+              "--microsoft"
+              "--firmware-builtin"
+            ];
+          };
         };
         extraEntries = ''
           /Windows 11
