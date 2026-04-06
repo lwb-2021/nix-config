@@ -3,7 +3,9 @@
   ...
 }:
 {
-
+  console = {
+    font = ./ter-v24b-rounded.psf.gz;
+  };
   environment.systemPackages = with pkgs; [
     nix-output-monitor
 
