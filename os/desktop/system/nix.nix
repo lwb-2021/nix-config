@@ -26,6 +26,9 @@
 
       ];
     };
+    extraOptions = ''
+      keep-derivations = true
+    '';
   };
 
   boot.loader.grub.configurationLimit = 4;
