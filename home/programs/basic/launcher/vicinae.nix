@@ -26,6 +26,10 @@ in
     in
     {
       enable = true;
+      systemd = {
+        enable = true;
+        autoStart = true;
+      };
       settings = {
         imports = [
           config.sops.templates."vicinae.json".path
@@ -42,6 +46,11 @@ in
         faviconService = "twenty";
 
         providers = {
+          applications = {
+            preferences = {
+              launchPrefix = "systemd-run --user --scope --slice=app.slice --";
+            };
+          };
           "@knoopx/${exts.nix.name}" = {
             preferences = {
             };
@@ -70,5 +79,4 @@ in
       ];
     };
   wayland.launcher.exec = "vicinae toggle";
-  autostart.commands = [ "vicinae server --config ${config.xdg.configHome}/vicinae/nix.json" ];
 }
