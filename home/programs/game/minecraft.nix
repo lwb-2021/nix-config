@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = with pkgs; [
     (prismlauncher.override {
@@ -17,5 +17,18 @@
     })
     gamemode
   ];
+
+  services.restic.backups."minecraft" = {
+
+    repository = "/data/backup/minecraft";
+    passwordFile = config.sops.secrets."restic/password".path;
+
+    dynamicFilesFrom = "find ${config.xdg.dataHome}/PrismLauncher -name \"level.dat\" -exec dirname {} \\;";
+    extraBackupArgs = [
+      "--group-by"
+      "paths"
+    ];
+  };
+
   data.local.directories = [ ".local/share/PrismLauncher" ];
 }
