@@ -61,7 +61,16 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 300
-      lazy: true
+      expected-status: 204
+  awesome-vpn:
+    type: "http"
+    url: "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml"
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 300
       expected-status: 204
 
 proxy-groups:
@@ -76,12 +85,14 @@ proxy-groups:
     type: select
     use:
       - freenodes
+      - awesome-vpn
 
   - name: Balance
     type: load-balance
     consistent-hashing: true
     use:
-     - freenodes
+      - freenodes
+      - awesome-vpn
 
 
 dns:
@@ -127,6 +138,7 @@ rules:
   
   - DOMAIN-KEYWORD,ghproxy,DIRECT
   - DOMAIN-SUFFIX,bing.com,DIRECT
+  - DOMAIN-SUFFIX,nixos-cuda.org,Proxy
 
   - GEOSITE,private,DIRECT
   - GEOSITE,onedrive,DIRECT
