@@ -1,12 +1,5 @@
 { ... }:
 {
-  imports = [
-    # TODO https://github.com/NixOS/nixpkgs/pull/470366
-    (builtins.fetchurl {
-      url = "https://github.com/luochen1990/nixpkgs/raw/9bcddd22fd5454aaa97345975837518686dd658c/nixos/modules/system/boot/zswap.nix";
-      sha256 = "sha256:000m59zjk1qfwn9z09i0k1ajv6knv75cri91575ikqfg6r0fhs0g";
-    })
-  ];
   services.upower = {
     enable = true;
   };
