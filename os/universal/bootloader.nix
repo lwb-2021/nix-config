@@ -10,6 +10,9 @@
       limine = {
         enable = true;
         efiSupport = true;
+
+        resolution = "2560x1600";
+
         maxGenerations = 4;
         secureBoot = {
           enable = true;
@@ -23,9 +26,9 @@
           };
         };
         extraEntries = ''
-          /Windows 11
-              protocol: efi
-              path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
+          /Ubuntu
+            protocol: efi
+            path: boot():/EFI/ubuntu/shimx64.efi
         '';
       };
 
