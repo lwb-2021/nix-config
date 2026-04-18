@@ -56,7 +56,7 @@
       terminal-exec = {
         enable = true;
         settings = {
-          default = [ "org.wezfurlong.wezterm.desktop" ];
+          default = [ "kitty.desktop" ];
         };
       };
     };
@@ -64,9 +64,7 @@
     home.file =
       let
         shebang = "#!/usr/bin/env bash";
-        pre = lib.concatStringsSep "\n" (
-          config.autostart.prepareCommands ++ [ "${lib.getExe pkgs.xrdb} ~/.Xresources" ]
-        );
+        pre = lib.concatStringsSep "\n" config.autostart.prepareCommands;
         post = lib.concatStringsSep "\n" config.autostart.commands;
 
       in
@@ -75,31 +73,17 @@
           executable = true;
           text = lib.concatStringsSep "\n" [
             shebang
+            pre
+            "sleep 1s"
             post
           ];
         };
-        ".config/prepare-wayland.sh" = {
-          executable = true;
-          text = lib.concatStringsSep "\n" [
-            shebang
-            pre
-          ];
-        };
       };
-    systemd.user.services.prepare-wayland = {
-      Unit = {
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session-pre.target" ];
-      };
-      Service = {
-        ExecStart = "${config.home.homeDirectory}/.config/prepare-wayland.sh";
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
     autostart = {
-      prepareCommands = lib.mkDefault [ ];
+      prepareCommands = [
+        "systemd-tmpfiles --create --user"
+        "${lib.getExe pkgs.xrdb} ~/.Xresources"
+      ];
       commands = lib.mkDefault [ ];
     };
 
