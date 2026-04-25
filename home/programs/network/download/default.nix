@@ -13,6 +13,7 @@
         colorScheme = "aurora";
 
         autoHideWindow = true;
+        lightweightMode = true;
         traySpeedometer = false;
 
         continue = true;
@@ -37,7 +38,7 @@
   data.persistence.files = [
     {
       file = ".local/share/com.motrix.next/download.session";
-      method = "symlink";
+      # method = "symlink";
     }
   ];
   xdg.mimeApps.defaultApplications =

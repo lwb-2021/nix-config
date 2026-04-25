@@ -8,12 +8,13 @@
   data = {
     local.directories = [
       ".cache/mozilla"
-      ".mozilla/firefox" # Mozilla Sync, do not need backup
+      ".config/mozilla/firefox" # Mozilla Sync
     ];
   };
-  home.file.".mozilla/firefox/default/search.json.mozlz4".force = lib.mkForce true;
+  home.file.".config/mozilla/firefox/default/search.json.mozlz4".force = lib.mkForce true;
   programs.firefox = {
     enable = true;
+    configPath = lib.removePrefix "${config.home.homeDirectory}/" "${config.xdg.configHome}/mozilla/firefox";
     package = pkgs.noCuda.firefox;
     languagePacks = [
       "zh-CN"

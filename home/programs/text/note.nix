@@ -12,6 +12,6 @@
   data.sync.folders = [
     "Documents/Notes"
   ];
-  autostart.commands = [ "sleep 2s && obsidian & " ];
+  autostart.commands = [ "obsidian & " ];
   # "${pkgs.obsidian}/share/applications/obsidian.desktop"
 }

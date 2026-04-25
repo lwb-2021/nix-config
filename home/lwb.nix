@@ -78,7 +78,7 @@ in
     ./programs/game/minecraft.nix
 
     ./programs/network/aria2
-    ./programs/network/download.nix
+    ./programs/network/download
     ./programs/network/chat.nix
     ./programs/network/firefox
     ./programs/network/kdeconnect.nix
