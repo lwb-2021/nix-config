@@ -34,7 +34,7 @@
   services.userborn = {
     # enable = true;
     # TODO
-    # Wait for https://github.com/nix-community/impermanence/pull/233 to be merged
+    # Wait for https://github.com/nix-community/impermanence/pull/223 to be merged
   };
 
   environment.variables.NIX_REMOTE = "daemon";

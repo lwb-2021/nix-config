@@ -7,7 +7,7 @@
   };
 
   data.local.directories = [
-    ".config/lutris" # TODO: maybe sync?
+    ".config/lutris" # TODO: sync?
     ".local/share/lutris"
     "Games"
   ];
