@@ -77,7 +77,6 @@ in
     ./programs/game/lutris.nix
     ./programs/game/minecraft.nix
 
-    ./programs/network/aria2
     ./programs/network/download
     ./programs/network/chat.nix
     ./programs/network/firefox
