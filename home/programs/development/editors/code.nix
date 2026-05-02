@@ -4,10 +4,9 @@
 }:
 {
   # TODO
-  data.local.directories = [ ".config/VSCodium" ];
+  data.local.directories = [ ".config/Code" ];
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -75,6 +74,7 @@
           gruntfuggly.todo-tree
           formulahendry.code-runner
           adpyke.codesnap
+          ms-vscode-remote.remote-ssh
 
           # Edit
           usernamehw.errorlens
@@ -101,7 +101,7 @@
 
           ## Python
           ms-python.python
-          # ms-python.vscode-pylance
+          ms-python.vscode-pylance
           charliermarsh.ruff
 
           ## Rust
@@ -114,14 +114,10 @@
           vue.volar
 
           # AI
-          github.copilot
+          github.copilot-chat
           qwenlm.qwen-code-vscode-ide-companion
 
         ]
-        ++ (with pkgs.open-vsx; [
-
-          jeanp413.open-remote-ssh
-        ])
         ++ (with pkgs.vscode-extensions; [
           # Features
           mkhl.direnv
