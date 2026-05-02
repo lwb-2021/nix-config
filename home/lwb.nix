@@ -104,6 +104,8 @@ in
     ./programs/shell/cli-tools/others.nix
 
     ./programs/education/anki.nix
+
+    ./programs/cybersecurity.nix
   ];
 
 }

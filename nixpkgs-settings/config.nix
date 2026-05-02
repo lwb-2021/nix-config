@@ -61,15 +61,22 @@
 
       "tampermonkey"
 
+      "vscode"
       "vscode-extension-ms-python-vscode-pylance"
       "vscode-extension-mhutchie-git-graph"
       "vscode-extension-github-copilot"
+      "vscode-extension-ms-vscode-remote-remote-ssh"
 
       "idea"
 
       "drawio"
 
       "evafast"
+
+      "windows-fonts"
+
+      "010editor"
+      "burpsuite"
     ];
   permittedInsecurePackages = [
   ];
