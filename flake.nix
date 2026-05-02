@@ -40,7 +40,6 @@
     };
 
     noctalia = {
-      # url = "github:noctalia-dev/noctalia-shell";
       url = "git+https://github.com/noctalia-dev/noctalia-shell.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -87,52 +86,54 @@
       };
     in
     {
-      nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
-        inherit pkgs;
-        specialArgs = { inherit inputs; };
-        modules = [
+      nixosConfigurations = {
+        lwb = nixpkgs.lib.nixosSystem {
+          inherit pkgs;
+          specialArgs = { inherit inputs; };
+          modules = [
 
-          inputs.impermanence.nixosModules.impermanence
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          inputs.nix-flatpak.nixosModules.nix-flatpak
+            inputs.impermanence.nixosModules.impermanence
+            inputs.stylix.nixosModules.stylix
+            inputs.sops-nix.nixosModules.sops
+            inputs.nix-flatpak.nixosModules.nix-flatpak
 
-          inputs.home-manager.nixosModules.home-manager
+            inputs.home-manager.nixosModules.home-manager
 
-          ./secrets/lwb/os.nix
+            ./secrets/lwb/os.nix
 
-          ./style
+            ./style
 
-          ./os/desktop
+            ./os/desktop
 
-          ./services/openlist
+            ./services/openlist
 
-          {
+            {
 
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "hm.bak";
-              users.lwb.imports = [
-                inputs.sops-nix.homeManagerModules.sops
-                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "hm.bak";
+                users.lwb.imports = [
+                  inputs.sops-nix.homeManagerModules.sops
+                  inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
-                inputs.vicinae.homeManagerModules.default
-                inputs.niri.homeModules.niri
-                inputs.noctalia.homeModules.default
+                  inputs.vicinae.homeManagerModules.default
+                  inputs.niri.homeModules.niri
+                  inputs.noctalia.homeModules.default
 
-                ./style
-                ./style/home.nix
+                  ./style
+                  ./style/home.nix
 
-                ./secrets/lwb/home.nix
+                  ./secrets/lwb/home.nix
 
-                ./home/lwb.nix
-              ];
-              extraSpecialArgs = { inherit inputs; };
+                  ./home/lwb.nix
+                ];
+                extraSpecialArgs = { inherit inputs; };
 
-            };
-          }
-        ];
+              };
+            }
+          ];
+        };
       };
       homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;

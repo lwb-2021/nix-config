@@ -50,5 +50,5 @@
       "x-scheme-handler/thunder" = motrix-next-handler;
       "x-scheme-handler/motrixnext" = motrix-next-handler;
     };
-  autostart.commands = [ "motrix-next --autostart & " ];
+  desktop.autostart.commands = [ "motrix-next --autostart & " ];
 }

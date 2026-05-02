@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    ./xdg.nix
     ./vars.nix
   ];
 

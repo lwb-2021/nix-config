@@ -5,7 +5,7 @@
     settings = import ./settings.nix;
   };
 
-  autostart.prepareCommands = [ "noctalia-shell &" ];
+  desktop.autostart.prepareCommands = [ "noctalia-shell &" ];
 
   wayland.locker.exec = "noctalia-shell ipc call lockScreen lock";
 
