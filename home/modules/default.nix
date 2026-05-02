@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./basic/tmpfiles.nix ];
+  imports = [
+    ./basic/tmpfiles.nix
+    ./desktop.nix
+  ];
 }

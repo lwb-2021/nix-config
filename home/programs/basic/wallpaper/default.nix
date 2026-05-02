@@ -4,5 +4,5 @@
     waypaper
   ];
   xdg.configFile."waypaper/config.ini".source = ./waypaper.ini;
-  autostart.commands = [ "waypaper --restore" ];
+  desktop.autostart.commands = [ "waypaper --restore" ];
 }
