@@ -99,6 +99,9 @@
           ## No Language
           christian-kohler.path-intellisense
 
+          # Justfile
+          nefrob.vscode-just-syntax
+
           ## Python
           ms-python.python
           ms-python.vscode-pylance
