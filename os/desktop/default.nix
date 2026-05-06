@@ -36,7 +36,7 @@
     ./software/fhs.nix
     ./software/flatpak.nix
     ./software/fonts.nix
-    ./software/virt/docker.nix
+    ./software/virt/container.nix
 
     ./software/apps/android.nix
     ./software/apps/gaming.nix
