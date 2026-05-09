@@ -22,7 +22,7 @@
   config =
     let
       removeHomePrefix = dir: (lib.removePrefix config.home.homeDirectory dir);
-      removeHomePrefixFromAll = builtins.map removeHomePrefix;
+      removeHomePrefixFromAll = map removeHomePrefix;
     in
     lib.mkIf config.desktop.enable {
       data = {

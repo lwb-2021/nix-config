@@ -61,98 +61,12 @@
     };
   };
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+    inputs:
     let
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit
-          (import ./nixpkgs-settings {
-            inherit inputs;
-            inherit (nixpkgs) lib;
-          })
-          config
-          overlays
-          ;
-        localSystem = {
-          inherit system;
-        };
-
-      };
-      my-utils = import ./utils/default.nix { inherit (nixpkgs) lib; };
+      my-utils = import ./utils/default.nix { inherit (inputs.nixpkgs) lib; };
     in
-    {
-      nixosConfigurations = {
-        lwb = nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-          specialArgs = { inherit inputs my-utils; };
-          modules = [
+    import ./outputs my-utils { inherit inputs my-utils; };
 
-            inputs.impermanence.nixosModules.impermanence
-            inputs.stylix.nixosModules.stylix
-            inputs.sops-nix.nixosModules.sops
-            inputs.nix-flatpak.nixosModules.nix-flatpak
-
-            inputs.home-manager.nixosModules.home-manager
-
-            ./secrets/lwb/os.nix
-
-            ./style
-
-            ./os/desktop
-
-            ./services/openlist
-
-            {
-
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "hm.bak";
-                users.lwb.imports = [
-                  inputs.sops-nix.homeManagerModules.sops
-                  inputs.nix-flatpak.homeManagerModules.nix-flatpak
-
-                  inputs.vicinae.homeManagerModules.default
-                  inputs.niri.homeModules.niri
-                  inputs.noctalia.homeModules.default
-
-                  ./style
-                  ./style/home.nix
-
-                  ./secrets/lwb/home.nix
-
-                  ./home/lwb.nix
-                ];
-                extraSpecialArgs = { inherit inputs my-utils; };
-
-              };
-            }
-          ];
-        };
-      };
-      homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          inputs.sops-nix.homeManagerModules.sops
-          inputs.stylix.homeModules.stylix
-          inputs.nix-flatpak.homeManagerModules.nix-flatpak
-
-          inputs.vicinae.homeManagerModules.default
-          inputs.niri.homeModules.niri
-
-          ./style
-          ./style/home.nix
-
-          ./home/lwb.nix
-        ];
-        extraSpecialArgs = { inherit inputs; };
-      };
-    };
 }
