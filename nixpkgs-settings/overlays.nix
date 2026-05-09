@@ -21,7 +21,9 @@
 
   })
   (final: prev: {
-
+    openldap = prev.openldap.overrideAttrs (_: {
+      doCheck = false;
+    }); # TODO https://github.com/NixOS/nixpkgs/issues/513245
   })
   (final: prev: {
   })
