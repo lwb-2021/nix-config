@@ -118,7 +118,6 @@
 
           # AI
           github.copilot-chat
-          qwenlm.qwen-code-vscode-ide-companion
 
         ]
         ++ (with pkgs.vscode-extensions; [
