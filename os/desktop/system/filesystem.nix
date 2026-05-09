@@ -51,4 +51,9 @@
     "d /data/backup - 0777 root root -"
   ];
 
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "daily";
+  };
+
 }
