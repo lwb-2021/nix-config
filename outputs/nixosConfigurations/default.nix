@@ -36,9 +36,9 @@
             inputs.niri.homeModules.niri
             inputs.noctalia.homeModules.default
 
-            ../secrets/lwb/home.nix
+            ../../secrets/lwb/home.nix
 
-            ../home/lwb.nix
+            ../../home/lwb.nix
           ];
           extraSpecialArgs = { inherit inputs my-utils; };
 
