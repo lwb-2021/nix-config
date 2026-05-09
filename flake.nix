@@ -84,12 +84,13 @@
         };
 
       };
+      my-utils = import ./utils/default.nix { inherit (nixpkgs) lib; };
     in
     {
       nixosConfigurations = {
         lwb = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs my-utils; };
           modules = [
 
             inputs.impermanence.nixosModules.impermanence
@@ -128,7 +129,7 @@
 
                   ./home/lwb.nix
                 ];
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = { inherit inputs my-utils; };
 
               };
             }
