@@ -20,8 +20,8 @@
 
       visualizer_output_name = "FIFO";
       visualizer_in_stereo = "yes";
-      visualizer_type = "wave";
-      visualizer_look = "▋▋";
+      visualizer_type = "spectrum";
+      visualizer_look = "●●";
       visualizer_data_source = "/tmp/mpd.fifo";
       visualizer_color = "blue, cyan, green, yellow, magenta, red";
     };

@@ -46,6 +46,14 @@ in
       (plug "done")
     ];
   };
+
+  programs.nushell = {
+    enable = true;
+    plugins = with pkgs.nushellPlugins; [
+    ];
+  };
+  programs.carapace.enable = true;
+
   programs.bash = {
     enable = true;
     historyControl = [ "ignorespace" ];

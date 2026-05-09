@@ -36,77 +36,77 @@ in
 
     # DE
 
-    ./programs/desktop
-    ./programs/desktop/niri
-    ./programs/desktop/noctalia
+    ./programs-old/desktop
+    ./programs-old/desktop/niri
+    ./programs-old/desktop/noctalia
 
-    ./programs/basic
+    ./programs-old/basic
 
-    ./programs/desktop/rime.nix
+    ./programs-old/desktop/rime.nix
 
-    ./programs/apps.nix
+    ./programs-old/apps.nix
 
     # Development
-    ./programs/development
-    ./programs/development/version-control.nix
-    ./programs/development/editors/code.nix
-    ./programs/development/editors/neovim.nix
-    ./programs/development/editors/idea.nix
+    ./programs-old/development
+    ./programs-old/development/version-control.nix
+    ./programs-old/development/editors/code.nix
+    ./programs-old/development/editors/neovim.nix
+    ./programs-old/development/editors/idea.nix
 
-    ./programs/development/languages/java.nix
-    ./programs/development/languages/python.nix
+    ./programs-old/development/languages/java.nix
+    ./programs-old/development/languages/python.nix
 
     #
 
-    ./programs/media/lyrics.nix
-    ./programs/media/mpd.nix
-    ./programs/media/mpris.nix
-    ./programs/media/mpv.nix
-    ./programs/media/ncmpcpp.nix
+    ./programs-old/media/lyrics.nix
+    ./programs-old/media/mpd.nix
+    ./programs-old/media/mpris.nix
+    ./programs-old/media/mpv.nix
+    ./programs-old/media/ncmpcpp.nix
 
-    ./programs/compatibility/wine.nix
+    ./programs-old/compatibility/wine.nix
 
-    ./programs/graphics/gimp.nix
-    ./programs/graphics/drawio.nix
+    ./programs-old/graphics/gimp.nix
+    ./programs-old/graphics/drawio.nix
 
-    ./programs/text/note.nix
-    ./programs/text/pandoc.nix
-    ./programs/text/ebook.nix
-    ./programs/text/zettlr.nix
-    ./programs/text/zotero.nix
+    ./programs-old/text/note.nix
+    ./programs-old/text/pandoc.nix
+    ./programs-old/text/ebook.nix
+    ./programs-old/text/zettlr.nix
+    ./programs-old/text/zotero.nix
 
-    ./programs/game/lutris.nix
-    ./programs/game/minecraft.nix
+    ./programs-old/game/lutris.nix
+    ./programs-old/game/minecraft.nix
 
-    ./programs/network/download
-    ./programs/network/chat.nix
-    ./programs/network/firefox
-    ./programs/network/kdeconnect.nix
-    ./programs/network/mail.nix
+    ./programs-old/network/download
+    ./programs-old/network/chat.nix
+    ./programs-old/network/firefox
+    ./programs-old/network/kdeconnect.nix
+    ./programs-old/network/mail.nix
 
-    ./programs/security
+    ./programs-old/security
 
-    ./programs/shell
-    ./programs/shell/tmux
-    ./programs/shell/atuin.nix
-    ./programs/shell/pay-respect.nix
-    ./programs/shell/starship.nix
+    ./programs-old/shell
+    ./programs-old/shell/tmux
+    ./programs-old/shell/atuin.nix
+    ./programs-old/shell/pay-respect.nix
+    ./programs-old/shell/starship.nix
 
-    ./programs/shell/cli-tools/bat.nix
-    ./programs/shell/cli-tools/eza.nix
-    ./programs/shell/cli-tools/fastfetch.nix
-    ./programs/shell/cli-tools/jq.nix
-    ./programs/shell/cli-tools/navi.nix
-    ./programs/shell/cli-tools/ripgrep.nix
-    ./programs/shell/cli-tools/taskwarrior.nix
-    ./programs/shell/cli-tools/yazi.nix
-    ./programs/shell/cli-tools/zoxide.nix
+    ./programs-old/shell/cli-tools/bat.nix
+    ./programs-old/shell/cli-tools/eza.nix
+    ./programs-old/shell/cli-tools/fastfetch.nix
+    ./programs-old/shell/cli-tools/jq.nix
+    ./programs-old/shell/cli-tools/navi.nix
+    ./programs-old/shell/cli-tools/ripgrep.nix
+    ./programs-old/shell/cli-tools/taskwarrior.nix
+    ./programs-old/shell/cli-tools/yazi.nix
+    ./programs-old/shell/cli-tools/zoxide.nix
 
-    ./programs/shell/cli-tools/others.nix
+    ./programs-old/shell/cli-tools/others.nix
 
-    ./programs/education/anki.nix
+    ./programs-old/education/anki.nix
 
-    ./programs/cybersecurity.nix
+    ./programs-old/cybersecurity.nix
   ];
 
 }
