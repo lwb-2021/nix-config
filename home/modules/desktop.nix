@@ -24,7 +24,7 @@
       removeHomePrefix = dir: (lib.removePrefix config.home.homeDirectory dir);
       removeHomePrefixFromAll = builtins.map removeHomePrefix;
     in
-    {
+    lib.mkIf config.desktop.enable {
       data = {
         persistence.directories = removeHomePrefixFromAll (
           with config.xdg.userDirs;
@@ -97,7 +97,7 @@
           };
         };
       desktop.autostart = {
-        prepareCommands = [
+        prepareCommands = lib.mkBefore [
           "systemd-tmpfiles --create --user"
           "${lib.getExe pkgs.xrdb} ~/.Xresources"
         ];

@@ -25,6 +25,7 @@ in
       // utils.mail.preset.qq
     );
   };
+  desktop.enable = true;
   imports = [
     ./modules
 
