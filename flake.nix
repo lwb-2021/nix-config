@@ -16,6 +16,7 @@
     impermanence.url = "github:nix-community/impermanence";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-bwrapper.url = "github:Naxdy/nix-bwrapper";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";

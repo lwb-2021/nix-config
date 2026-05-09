@@ -27,5 +27,6 @@
   })
   (final: prev: {
   })
+  inputs.nix-bwrapper.overlays.default
   inputs.nix-vscode-extensions.overlays.default
 ]
