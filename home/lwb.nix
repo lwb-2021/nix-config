@@ -26,6 +26,11 @@ in
     );
   };
   desktop.enable = true;
+
+  home.packages = with pkgs; [
+    drawy
+  ];
+
   imports = [
     ./modules
 
