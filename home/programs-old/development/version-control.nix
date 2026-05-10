@@ -21,11 +21,4 @@
     git-ignore
   ];
 
-  programs.jujutsu = {
-    enable = true;
-    settings = {
-      user = config.programs.git.settings.user;
-    };
-  };
-  programs.jjui.enable = true;
 }
