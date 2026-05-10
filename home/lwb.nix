@@ -32,7 +32,6 @@ in
   ];
 
   imports = [
-    ./modules
 
     ./config/i18n.nix
     ./config/thunar.nix
