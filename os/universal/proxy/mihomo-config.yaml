@@ -60,7 +60,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      timeout: 300
+      timeout: 400
       expected-status: 204
   awesome-vpn:
     type: "http"
@@ -70,7 +70,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      timeout: 300
+      timeout: 400
       expected-status: 204
 
 proxy-groups:
