@@ -17,8 +17,6 @@
 
       ../../os/desktop
 
-      ../../services/openlist
-
       {
 
         home-manager = {
