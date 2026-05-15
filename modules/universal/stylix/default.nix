@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = ./themes/catppuccin.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     opacity = {
       applications = 0.8;
       desktop = 0.0;
