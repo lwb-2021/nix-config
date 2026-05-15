@@ -49,15 +49,10 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vicinae = {
-      url = "git+https://github.com/vicinaehq/vicinae?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     vicinae-extensions = {
       url = "git+https://github.com/vicinaehq/extensions?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        vicinae.follows = "vicinae";
       };
     };
   };

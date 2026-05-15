@@ -32,7 +32,6 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
-            inputs.vicinae.homeManagerModules.default
             inputs.niri.homeModules.niri
             inputs.noctalia.homeModules.default
 

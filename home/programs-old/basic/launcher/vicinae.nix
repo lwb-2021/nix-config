@@ -20,12 +20,13 @@ in
     	}
     }
   '';
-  services.vicinae =
+  programs.vicinae =
     let
-      exts = inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system};
+      exts = inputs.vicinae-extensions.packages.${localSystem};
     in
     {
       enable = true;
+      package = pkgs.vicinae;
       systemd = {
         enable = true;
         autoStart = true;

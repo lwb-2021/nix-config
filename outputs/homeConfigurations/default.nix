@@ -10,7 +10,6 @@
       inputs.stylix.homeModules.stylix
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
-      inputs.vicinae.homeManagerModules.default
       inputs.niri.homeModules.niri
 
       ../../home/lwb.nix
