@@ -1,4 +1,4 @@
-{ lib, my-utils, ... }:
+{ my-utils, ... }:
 {
   imports = my-utils.mkImportAll ./.;
 }

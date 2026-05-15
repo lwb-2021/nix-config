@@ -25,6 +25,7 @@ in
       // utils.mail.preset.qq
     );
   };
+  collections.agent.enable = true;
   desktop.enable = true;
 
   home.packages = with pkgs; [
@@ -76,7 +77,7 @@ in
     ./programs-old/text/note.nix
     ./programs-old/text/pandoc.nix
     ./programs-old/text/ebook.nix
-    ./programs-old/text/zettlr.nix
+    # ./programs-old/text/zettlr.nix
     ./programs-old/text/zotero.nix
 
     ./programs-old/game/lutris.nix

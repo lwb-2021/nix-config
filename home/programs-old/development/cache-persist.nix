@@ -3,7 +3,6 @@
   data.local.directories = [
     ".cargo"
     ".android" # TODO
-    ".qwen" # TODO
 
     ".local/state" # TODO
 
