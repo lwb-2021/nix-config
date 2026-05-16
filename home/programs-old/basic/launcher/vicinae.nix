@@ -81,5 +81,5 @@ in
         wifi-commander
       ];
     };
-  wayland.launcher.exec = "vicinae toggle";
+  desktop.default-applications.launcher = "vicinae toggle";
 }

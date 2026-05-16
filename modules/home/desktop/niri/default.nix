@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./binds.nix
@@ -6,7 +11,7 @@
     ./rules.nix
   ];
   programs.niri = {
-    enable = true;
+    enable = config.desktop.niri.enable;
     package = pkgs.niri;
     settings = {
       input = {
@@ -27,8 +32,7 @@
       };
     };
   };
-  # TODO fix screenshare
-  xdg.portal.config = {
+  xdg.portal.config = lib.mkIf config.desktop.niri.enable {
     niri = {
       "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
       "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];

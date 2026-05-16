@@ -8,15 +8,15 @@
       with config.lib.niri.actions;
       let
         mod = "Mod";
+        default-apps = config.desktop.default-applications;
       in
       {
         "${mod}+Shift+Slash".action = show-hotkey-overlay;
 
-        "${mod}+T".action = spawn-sh "${config.wayland.terminal.exec}";
-        "${mod}+R".action = spawn-sh "${config.wayland.launcher.exec}";
+        "${mod}+T".action = spawn-sh "${default-apps.terminal}";
+        "${mod}+R".action = spawn-sh "${default-apps.launcher}";
         "${mod}+E".action = spawn "thunar";
-        "${mod}+C".action = close-window;
-        "Alt+Space".action = spawn-sh "${config.wayland.launcher.exec}";
+        "Print".action = spawn-sh "${default-apps.screenshot}";
 
         "${mod}+H".action = focus-column-left;
         "${mod}+J".action = focus-window-down;
@@ -26,18 +26,15 @@
         "${mod}+Shift+J".action = move-window-down;
         "${mod}+Shift+K".action = move-window-up;
         "${mod}+Shift+L".action = move-column-right;
-
-        "${mod}+F".action = toggle-window-floating;
-        "${mod}+Shift+M".action = toggle-windowed-fullscreen;
-
         "${mod}+M".action = maximize-column;
         "${mod}+Minus".action = set-column-width "-10%";
         "${mod}+Equal".action = set-column-width "+10%";
 
-        "${mod}+Shift+Escape".action = quit;
+        "${mod}+C".action = close-window;
+        "${mod}+F".action = toggle-window-floating;
+        "${mod}+Shift+M".action = toggle-windowed-fullscreen;
 
-        "Print".action = spawn-sh "${config.wayland.screenshot.exec}";
-        # "Alt+Print".action = screenshot-window;
+        "${mod}+Shift+Escape".action = quit;
 
         "${mod}+Tab" = {
           action = toggle-overview;

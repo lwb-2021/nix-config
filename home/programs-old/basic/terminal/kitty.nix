@@ -24,5 +24,5 @@ in
     };
   };
   programs.tmux.terminal = "xterm-kitty";
-  wayland.terminal.exec = "kitty -1 ${lib.getExe pkgs.bash} -i -c ${attach-to-tmux}";
+  desktop.default-applications.terminal = "kitty -1 ${lib.getExe pkgs.bash} -i -c ${attach-to-tmux}";
 }

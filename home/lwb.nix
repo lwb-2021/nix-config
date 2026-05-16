@@ -26,7 +26,11 @@ in
     );
   };
   collections.agent.enable = true;
-  desktop.enable = true;
+  desktop = {
+    enable = true;
+    niri.enable = true;
+    noctalia.enable = true;
+  };
 
   home.packages = with pkgs; [
     drawy
@@ -42,12 +46,8 @@ in
     # DE
 
     ./programs-old/desktop
-    ./programs-old/desktop/niri
-    ./programs-old/desktop/noctalia
 
     ./programs-old/basic
-
-    ./programs-old/desktop/rime.nix
 
     ./programs-old/apps.nix
 

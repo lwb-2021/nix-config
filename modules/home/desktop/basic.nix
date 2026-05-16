@@ -8,12 +8,35 @@
   options = with lib; {
     desktop = {
       enable = mkEnableOption { };
+      niri = {
+        enable = mkEnableOption { };
+      };
+      noctalia = {
+        enable = mkEnableOption { };
+      };
+
+      # Universal Options
+
       autostart = {
         prepareCommands = mkOption {
           type = types.listOf types.lines;
         };
         commands = mkOption {
           type = types.listOf types.lines;
+        };
+      };
+      default-applications = {
+        terminal = mkOption {
+          type = types.str;
+        };
+        screenshot = mkOption {
+          type = types.str;
+        };
+        launcher = mkOption {
+          type = types.str;
+        };
+        locker = mkOption {
+          type = types.str;
         };
       };
     };
@@ -102,6 +125,28 @@
           "${lib.getExe pkgs.xrdb} ~/.Xresources"
         ];
         commands = lib.mkDefault [ ];
+      };
+      systemd.user.services."xss-lock" = {
+        Unit = {
+          Description = "xss-lock, session locker service";
+          After = [ "graphical-session.target" ];
+          PartOf = [ "graphical-session.target" ];
+        };
+
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
+        };
+
+        Service = {
+          ExecStart = lib.concatStringsSep " " (
+            [
+              "${pkgs.xss-lock}/bin/xss-lock"
+              "-s \${XDG_SESSION_ID}"
+            ]
+            ++ [ "-- ${config.desktop.default-applications.locker}" ]
+          );
+          Restart = "always";
+        };
       };
 
     };

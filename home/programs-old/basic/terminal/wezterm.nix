@@ -5,5 +5,5 @@
     extraConfig = builtins.readFile ./wezterm.lua;
   };
   desktop.autostart.commands = [ "wezterm-mux-server --daemonize" ];
-  wayland.terminal.exec = "wezterm";
+  desktop.default-applications.terminal = "wezterm";
 }
