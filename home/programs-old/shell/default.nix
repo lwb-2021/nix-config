@@ -52,6 +52,7 @@ in
     plugins = with pkgs.nushellPlugins; [
     ];
   };
+
   programs.carapace.enable = true;
 
   programs.bash = {
@@ -62,6 +63,10 @@ in
     files = [
       {
         file = ".local/share/fish/fish_history";
+        method = "symlink";
+      }
+      {
+        file = ".config/nushell/history.txt";
         method = "symlink";
       }
     ];

@@ -25,7 +25,6 @@
   };
   services.gpg-agent = {
     enable = true;
-    enableFishIntegration = true;
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
     pinentry.package = pkgs.pinentry-gnome3;

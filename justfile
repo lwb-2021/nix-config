@@ -1,4 +1,4 @@
-set shell := ["fish", "-c"]
+set shell := ["nu", "-c"]
 
 default:
   @just --list

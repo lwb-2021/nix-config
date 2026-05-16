@@ -15,7 +15,7 @@ in
       cursor_trail_decay = "0.1 0.4";
       pixel_scroll = "yes";
 
-      shell = "fish";
+      shell = "nu";
 
       initial_window_width = "179c"; # $COLUMNS
       initial_window_height = "45c"; # $LINES

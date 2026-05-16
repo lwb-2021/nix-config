@@ -2,7 +2,7 @@
 {
   programs.tmux = {
     enable = true;
-    shell = lib.getExe pkgs.fish;
+    shell = lib.getExe pkgs.nushell;
 
     mouse = true;
     clock24 = true;
