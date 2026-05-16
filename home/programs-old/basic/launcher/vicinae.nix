@@ -37,14 +37,16 @@ in
         ];
         theme = {
           # name = "vicinae-dark";
-          iconTheme = "BeautyLine";
+          dark = {
+            icon_theme = "BeautyLine";
+          };
         };
         window = {
           csd = true;
           rounding = 10;
         };
 
-        faviconService = "twenty";
+        favicon_service = "twenty";
 
         providers = {
           applications = {
