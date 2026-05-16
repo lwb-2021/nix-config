@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -41,4 +42,10 @@
     enable = true;
     flake = "/home/lwb/Configurations/nix-config";
   };
+  environment.shells = [
+    "/etc/profiles/per-user/lwb/bin/fish"
+    (lib.getExe pkgs.fish)
+    "/etc/profiles/per-user/lwb/bin/nu"
+    (lib.getExe pkgs.nushell)
+  ];
 }
