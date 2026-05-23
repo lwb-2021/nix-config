@@ -27,6 +27,9 @@
   })
   (final: prev: {
   })
+
+  inputs.nix-cachyos-kernel.overlays.default
+
   inputs.nix-bwrapper.overlays.default
   inputs.nix-vscode-extensions.overlays.default
 ]

@@ -29,6 +29,7 @@
     };
 
     #
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     my-neovim = {
       url = "github:lwb-2021/neovim-config";
