@@ -60,17 +60,28 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      timeout: 400
+      timeout: 1000
       expected-status: 204
-  awesome-vpn:
+  
+  free-servers:
     type: "http"
-    url: "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml"
+    url: "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 1000
+      expected-status: 204
+  nwalls:
+    type: "http"
+    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      timeout: 400
+      timeout: 1000
       expected-status: 204
 
 proxy-groups:
@@ -78,21 +89,34 @@ proxy-groups:
     type: select 
     proxies:
     - DIRECT
+    - Auto
     - Select
     - Balance
+
+  - name: Auto
+    type: url-test
+    interval: 300
+    timeout: 600
+    tolerance: 50
+    use:
+      - freenodes
+      - nwalls
+      - free-servers
 
   - name: Select
     type: select
     use:
       - freenodes
-      - awesome-vpn
+      - nwalls
+      - free-servers
 
   - name: Balance
     type: load-balance
     consistent-hashing: true
     use:
       - freenodes
-      - awesome-vpn
+      - nwalls
+      - free-servers
 
 
 dns:
@@ -138,7 +162,10 @@ rules:
   
   - DOMAIN-KEYWORD,ghproxy,DIRECT
   - DOMAIN-SUFFIX,bing.com,DIRECT
+
   - DOMAIN-SUFFIX,nixos-cuda.org,Proxy
+  - DOMAIN-SUFFIX,cachix.org,Proxy
+  - DOMAIN-SUFFIX,xuyh0120.win,Proxy
 
   - GEOSITE,private,DIRECT
   - GEOSITE,onedrive,DIRECT
