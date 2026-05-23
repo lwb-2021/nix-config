@@ -30,6 +30,7 @@
       "com.tencent.wemeet"
       "com.dingtalk.DingTalk"
       "com.wps.Office"
+      "com.discordapp.Discord"
 
     ];
     overrides = {
@@ -78,6 +79,7 @@
       local.directories = lib.flatten [
         ".local/share/flatpak"
         (appData "com.tencent.wemeet")
+        (appConfig "com.discordapp.Discord")
       ];
     };
 
