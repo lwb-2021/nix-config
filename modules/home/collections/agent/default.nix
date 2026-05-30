@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options = with lib; {
     collections.agent = {
@@ -15,18 +20,33 @@
         enableMcpIntegration = true;
         context = builtins.readFile ./context.md;
         settings = {
+          lsp = {
+            rust = {
+              command = [ (lib.getExe pkgs.rust-analyzer) ];
+            };
+          };
           plugin = [ "opencode-pty" ];
           permission = {
-            bash = "ask";
+            bash = {
+              "*" = "ask";
+
+              "git diff *" = "allow";
+              "git log *" = "allow";
+              "git status" = "allow";
+            };
             edit = "ask";
             external_directory = {
               "~/Configurations/**" = "allow";
+              "/tmp/**" = "allow";
             };
           };
         };
       };
       programs.mcp = {
         enable = cfg.enable;
+      };
+      home.sessionVariables = {
+        OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
       };
       data.local.directories = lib.mkIf cfg.enable [
         ".cache/opencode"

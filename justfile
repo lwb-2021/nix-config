@@ -15,5 +15,5 @@ switch:
 
 # For agent use: apply changes with polkit
 apply:
-  nh os switch -e pkexec
+  nh os switch -e pkexec --no-nom
 
