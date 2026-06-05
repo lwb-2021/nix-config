@@ -21,10 +21,6 @@
       "en-US"
     ];
 
-    nativeMessagingHosts = with pkgs.noCuda; [
-      firefoxpwa
-    ];
-
     policies = {
       ExtensionSettings = {
         "{e2488817-3d73-4013-850d-b66c5e42d505}" = {
