@@ -9,7 +9,10 @@ let
   };
 in
 {
-  home.packages = with pkgs; [ grc ];
+  home.packages = with pkgs; [
+    grc
+    carapace-bridge
+  ];
 
   programs.fish = {
     enable = true;
@@ -54,6 +57,9 @@ in
   };
 
   programs.carapace.enable = true;
+  home.sessionVariables = {
+    CARAPACE_BRIDGES = "fish,bash,inshellisense";
+  };
 
   programs.bash = {
     enable = true;
