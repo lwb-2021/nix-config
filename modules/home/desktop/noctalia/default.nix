@@ -8,14 +8,14 @@ let
   cfg = config.desktop.noctalia;
 in
 {
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = cfg.enable;
-    package = pkgs.noctalia-shell;
+    # package = pkgs.noctalia-shell;
     settings = import ./settings.nix;
   };
 
-  desktop.autostart.prepareCommands = lib.mkIf cfg.enable [ "noctalia-shell &" ];
+  desktop.autostart.prepareCommands = lib.mkIf cfg.enable [ "noctalia &" ];
 
-  desktop.default-applications.locker = lib.mkIf cfg.enable "noctalia-shell ipc call lockScreen lock";
+  desktop.default-applications.locker = lib.mkIf cfg.enable "noctalia msg session lock";
 
 }

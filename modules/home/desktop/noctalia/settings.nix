@@ -1,85 +1,67 @@
 {
-  general = {
-    showHibernateOnLockScreen = true;
-  };
-  colorSchemes.predefinedScheme = "Catppuccin";
+  shell = {
+    time_format = "{:%H:%M}";
+    date_format = "%A, %x";
 
-  dock.enabled = false;
-  wallpaper.enabled = false;
-
-  location = {
-    name = "Shanghai";
-  };
-
-  ui = {
-    panelBackgroundOpacity = 0.0;
-  };
-
-  bar = {
-    showCapsule = false;
-    capsuleOpacity = 0.0;
-    floating = true;
-
-    "widgets" = {
-      "left" = [
-        {
-          id = "Clock";
-        }
-        {
-          id = "SystemMonitor";
-          "diskPath" = "/nix";
-        }
-        {
-
-          id = "MediaMini";
-        }
-        {
-
-          id = "ActiveWindow";
-
-        }
-      ];
-      center = [ ];
-      right = [
-        {
-          id = "Tray";
-          blacklist = [ ];
-          pinned = [
-            "*Obsidian"
-          ];
-        }
-        {
-          id = "NotificationHistory";
-        }
-        {
-          id = "Network";
-        }
-        {
-          id = "Bluetooth";
-        }
-        {
-          id = "Volume";
-        }
-        {
-          id = "Battery";
-          displayMode = "alwaysShow";
-          showPowerProfiles = true;
-          warningThreshold = 30;
-        }
-
-        {
-          id = "Brightness";
-        }
-        {
-          id = "ControlCenter";
-          useDistroLogo = true;
-          enableColorization = true;
-        }
-      ];
+    panel = {
+      transparency_mode = "solid";
+      borders = true;
+      shadow = true;
     };
   };
-  controlCenter = {
-    diskPath = "/nix";
+
+  theme = {
+    mode = "dark";
+    source = "builtin";
+    builtin = "Catppuccin";
   };
 
+  wallpaper.enabled = false;
+
+  location.address = "Shanghai";
+
+  bar.main = {
+    position = "top";
+    thickness = 34;
+    background_opacity = 0.0;
+    capsule = false;
+    margin_ends = 180;
+    margin_edge = 10;
+    padding = 14;
+    widget_spacing = 6;
+    shadow = true;
+
+    start = [
+      "sysmon"
+      "media"
+      "active_window"
+      "clock"
+    ];
+    center = [ ];
+    end = [
+      "tray"
+      "notifications"
+      "network"
+      "bluetooth"
+      "volume"
+      "battery"
+      "brightness"
+      "control-center"
+      "session"
+    ];
+  };
+
+  widget = {
+    sysmon = {
+      stat = "disk_pct";
+      path = "/nix";
+    };
+    battery = {
+      show_label = true;
+      warning_threshold = 30;
+    };
+    tray = {
+      pinned = [ "*Obsidian" ];
+    };
+  };
 }
