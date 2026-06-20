@@ -9,7 +9,6 @@
     enable = true;
     mutableExtensionsDir = false;
     argvSettings = {
-      password-store = "gnome-libsecret";
     };
     profiles.default = {
       enableExtensionUpdateCheck = false;
