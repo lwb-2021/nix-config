@@ -13,8 +13,6 @@
       enable = true;
       shortPath = true;
     };
-    settings = {
-    };
   };
   programs.notmuch = {
     enable = true;
