@@ -25,6 +25,7 @@
         };
         neomutt = {
           enable = lib.mkDefault true;
+          showDefaultMailbox = lib.mkDefault false;
           mailboxType = "maildir";
         };
         notmuch = {
