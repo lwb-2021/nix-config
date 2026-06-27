@@ -52,17 +52,6 @@ sniffer:
 
 
 proxy-providers:
-  freenodes:
-    type: "http"
-    url: "https://gist.githubusercontent.com/shuaidaoya/9e5cf2749c0ce79932dd9229d9b4162b/raw/mihomo.yaml"
-    interval: 43200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 1000
-      expected-status: 204
-  
   free-servers:
     type: "http"
     url: "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
@@ -73,6 +62,18 @@ proxy-providers:
       interval: 300
       timeout: 1000
       expected-status: 204
+
+  free-vpn-subscribers:
+    type: "http"
+    url: "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/clash.yaml"
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 1000
+      expected-status: 204
+
   nwalls:
     type: "http"
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
@@ -89,32 +90,31 @@ proxy-groups:
     type: select 
     proxies:
     - DIRECT
-    - Auto
+    - Fallback
     - Select
     - Balance
 
-  - name: Auto
-    type: url-test
+  - name: Fallback
+    type: fallback
     interval: 300
-    timeout: 600
+    timeout: 1000
     tolerance: 50
     use:
-      - freenodes
       - nwalls
       - free-servers
+      - free-vpn-subscribers
 
   - name: Select
     type: select
     use:
-      - freenodes
       - nwalls
       - free-servers
+      - free-vpn-subscribers
 
   - name: Balance
     type: load-balance
     consistent-hashing: true
     use:
-      - freenodes
       - nwalls
       - free-servers
 
