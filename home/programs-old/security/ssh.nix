@@ -36,12 +36,12 @@
     SSH_ASKPASS = pkgs.writeShellScript "ssh-askpass" ''
       #!/bin/bash
       key=$(basename "$1" | tr -d "'" | tr -d ":" | tr -d " ")
-      pass=$(pass show "ssh/passphrases/$key" 2>/dev/null)
-      if [ $1 =~ *fingerprint* || -z "$pass" ]; then
+      pass=$(pass show "SSH/Passphrases/$key" 2>/dev/null)
+      if [[ -z "$pass" || $1 =~ fingerprint ]]; then
           if [ -n "$WAYLAND_DISPLAY" ]; then
-              pass=$(zenity --entry --hide-text --text=$1)
+              pass=$(zenity --entry --hide-text --text="$1")
           else
-              read -s -p $1 pass
+              read -s -p "$1" pass
               echo
           fi
       fi
