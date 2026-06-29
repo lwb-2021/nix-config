@@ -9,7 +9,6 @@
     nix-output-monitor
 
     lolcat
-    carbon-now-cli
     cowsay
 
     nettools
