@@ -1,6 +1,6 @@
 {
   shell = {
-    time_format = "{:%H:%M}";
+    time_format = "{:%H:%M:%S}";
     date_format = "%A, %x";
 
     panel = {
@@ -10,6 +10,7 @@
     };
   };
 
+  battery.warning_threshold = 20;
   theme = {
     mode = "dark";
     source = "builtin";
@@ -22,24 +23,31 @@
 
   bar.main = {
     position = "top";
-    thickness = 34;
     background_opacity = 0.0;
     capsule = false;
-    margin_ends = 180;
-    margin_edge = 10;
-    padding = 14;
-    widget_spacing = 6;
     shadow = true;
+
+    margin_ends = 64;
+    margin_edge = 10;
+    widget_spacing = 10;
+    padding = 14;
+    thickness = 32;
+
+    font_weight = 700;
+    scale = 1.10;
 
     start = [
       "sysmon"
-      "media"
+      "lock_keys"
+      "privacy"
       "active_window"
+    ];
+    center = [
       "clock"
     ];
-    center = [ ];
     end = [
       "tray"
+      "spacer_2"
       "notifications"
       "network"
       "bluetooth"
@@ -52,16 +60,36 @@
   };
 
   widget = {
+    clock.format = "{:%H:%M:%S}";
     sysmon = {
-      stat = "disk_pct";
+      stat = "ram_used";
       path = "/nix";
     };
-    battery = {
-      show_label = true;
-      warning_threshold = 30;
+    lock_keys = {
+      display = "full";
+      hide_when_off = true;
     };
+    privacy.hide_inactive = true;
+    active_window.display = "icon_only";
+
     tray = {
-      pinned = [ "*Obsidian" ];
+      detached_panel = true;
+      drawer = true;
+      match_adjacent_spacing = true;
+      pinned = [ "Notes | Obsidian" ];
     };
+    spacer_2 = {
+      length = 24;
+      type = "spacer";
+    };
+    notifications.hide_when_no_unread = true;
+    network.show_label = false;
+    volume.show_label = false;
+    battery = {
+      hide_when_plugged = true;
+      show_label = false;
+    };
+    brightness.show_label = false;
   };
+
 }
