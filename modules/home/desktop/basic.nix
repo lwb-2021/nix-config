@@ -87,6 +87,7 @@
           extraPortals = with pkgs; [
             xdg-desktop-portal
             xdg-desktop-portal-gtk
+            xdg-desktop-portal-termfilechooser
           ];
         };
         userDirs = {
@@ -99,26 +100,39 @@
             default = [ "kitty.desktop" ];
           };
         };
+
+        configFile = {
+          "xdg-desktop-portal-termfilechooser/config".text =
+            let
+              wrapper = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
+            in
+            ''
+              [filechooser]
+              cmd=${wrapper}
+              default_dir=$HOME
+              env=TERMCMD='kitty -o font_size=14 -T "File Chooser" --class file-chooser'
+              open_mode = suggested
+              save_mode = last
+            '';
+          "autostart.sh" =
+            let
+              shebang = "#!/usr/bin/env bash";
+              pre = lib.concatStringsSep "\n" config.desktop.autostart.prepareCommands;
+              post = lib.concatStringsSep "\n" config.desktop.autostart.commands;
+
+            in
+            {
+              executable = true;
+              text = lib.concatStringsSep "\n" [
+                shebang
+                pre
+                "sleep 1s"
+                post
+              ];
+            };
+        };
       };
 
-      home.file =
-        let
-          shebang = "#!/usr/bin/env bash";
-          pre = lib.concatStringsSep "\n" config.desktop.autostart.prepareCommands;
-          post = lib.concatStringsSep "\n" config.desktop.autostart.commands;
-
-        in
-        {
-          ".config/autostart.sh" = {
-            executable = true;
-            text = lib.concatStringsSep "\n" [
-              shebang
-              pre
-              "sleep 1s"
-              post
-            ];
-          };
-        };
       desktop.autostart = {
         prepareCommands = lib.mkBefore [
           "systemd-tmpfiles --create --user"

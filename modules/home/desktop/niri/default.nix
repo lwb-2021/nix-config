@@ -34,7 +34,7 @@
   };
   xdg.portal.config = lib.mkIf config.desktop.niri.enable {
     niri = {
-      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+      "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ]; # or "kde"
       "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
     };
   };

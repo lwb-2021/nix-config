@@ -14,5 +14,12 @@
         };
       clip-to-geometry = true;
     }
+    {
+      matches = [ { app-id = "file-chooser"; } ];
+      open-floating = true;
+      open-focused = true;
+      default-column-width.proportion = 0.6;
+      default-window-height.proportion = 0.5;
+    }
   ];
 }
