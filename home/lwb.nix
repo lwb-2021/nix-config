@@ -26,6 +26,7 @@ in
     );
   };
   collections.agent.enable = true;
+  collections.office.enable = true;
   desktop = {
     enable = true;
     niri.enable = true;

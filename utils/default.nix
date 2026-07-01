@@ -21,4 +21,6 @@ rec {
         value = import (path + "/${f}") args;
       }) (scanNixModules path)
     ));
+  mkListFromPath = path: args: map (f: (import (path + "/${f}") args)) (scanNixModules path);
+
 }
