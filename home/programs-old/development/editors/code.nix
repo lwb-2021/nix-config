@@ -48,6 +48,10 @@
         "github.gitProtocol" = "ssh";
         "gitblame.inlineMessageEnabled" = true;
 
+        # Python
+        "python.languageServer" = "Pylance";
+        "ty.disableLanguageServices" = true;
+
         # Java
 
         # Nix
@@ -97,6 +101,9 @@
           # Nix
           # bbenoist.nix
 
+          # Nushell
+          thenuprojectcontributors.vscode-nushell-lang
+
           # Completions and Linting
           ## No Language
           christian-kohler.path-intellisense
@@ -108,6 +115,7 @@
           ms-python.python
           ms-python.vscode-pylance
           charliermarsh.ruff
+          astral-sh.ty
 
           ## Rust
           rust-lang.rust-analyzer
