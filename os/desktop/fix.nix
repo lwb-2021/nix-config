@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   programs.gdk-pixbuf.modulePackages = [ pkgs.librsvg ]; # fix fcitx5
 
@@ -7,5 +7,8 @@
   systemd.services.home-manager-lwb.serviceConfig = {
     RemainAfterExit = "yes";
   };
+
+  # Speed up boot, as graphical.target depends on network-online.target through some services
+  systemd.services.NetworkManager-wait-online.enable = false;
 
 }
