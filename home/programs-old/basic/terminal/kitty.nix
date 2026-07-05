@@ -1,9 +1,4 @@
-{ lib, pkgs, ... }:
-let
-  attach-to-tmux = pkgs.writeShellScript "attach-to-tmux.sh" ''
-    tmux attach -t default || tmux new -s default
-  '';
-in
+{ ... }:
 {
   programs.kitty = {
     enable = true;
@@ -20,9 +15,8 @@ in
       initial_window_width = "179c"; # $COLUMNS
       initial_window_height = "45c"; # $LINES
 
-      confirm_os_window_close = "0";
     };
   };
   programs.tmux.terminal = "xterm-kitty";
-  desktop.default-applications.terminal = "kitty -1 ${lib.getExe pkgs.bash} -i -c ${attach-to-tmux}";
+  desktop.default-applications.terminal = "kitty -1";
 }
