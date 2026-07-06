@@ -14,6 +14,11 @@
     enable = config.desktop.niri.enable;
     package = pkgs.niri;
     settings = {
+      blur = {
+        offset = 3;
+        noise = 0.02;
+        saturation = 1.5;
+      };
       input = {
         touchpad = {
           natural-scroll = false;
@@ -27,6 +32,7 @@
         enable = true;
         path = lib.getExe pkgs.xwayland-satellite;
       };
+
       debug = {
         honor-xdg-activation-with-invalid-serial = true;
       };

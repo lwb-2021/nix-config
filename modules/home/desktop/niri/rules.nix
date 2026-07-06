@@ -13,7 +13,19 @@
           top-right = radius;
         };
       clip-to-geometry = true;
+
+      background-effect = {
+        blur = true;
+        xray = true;
+      };
     }
+    {
+      matches = [ { is-floating = true; } ];
+      background-effect = {
+        xray = false;
+      };
+    }
+
     {
       matches = [ { app-id = "file-chooser"; } ];
       open-floating = true;
