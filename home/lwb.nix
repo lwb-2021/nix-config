@@ -27,6 +27,7 @@ in
   };
   collections.agent.enable = true;
   collections.office.enable = true;
+  collections.modern-shell.enable = true;
   desktop = {
     enable = true;
     niri.enable = true;
