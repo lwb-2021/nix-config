@@ -6,7 +6,6 @@
 }:
 {
   stylix.targets = {
-    firefox.enable = false;
     qt = {
       enable = true;
       platform = "qtct";
@@ -15,14 +14,14 @@
       colors.enable = false;
       flatpakSupport.enable = true;
     };
-    noctalia-shell.enable = false;
+    noctalia.enable = false;
     obsidian.enable = false;
   };
   gtk = {
     theme = {
-      name = "catppuccin-mocha-mauve-standard+float,rimless";
+      name = "catppuccin-mocha-lavender-standard+float,rimless";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
+        accents = [ "lavender" ];
         tweaks = [
           "float"
           "rimless"
