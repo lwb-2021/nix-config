@@ -58,15 +58,16 @@
     IOSchedulingPriority = 7;
   };
   systemd.slices.anti-hungry.sliceConfig = {
-    CPUQuota = "1200%";
+    CPUQuota = "400%";
+    CPUAffinity = "1-4";
 
     IOWeight = 10;
 
     MemoryAccounting = true; # Allow to control with systemd-cgtop
-    MemoryHigh = "75%";
-    MemoryMax = "80%";
-    MemorySwapMax = "80%";
-    MemoryZSwapMax = "80%";
+    MemoryHigh = "45%";
+    MemoryMax = "60%";
+    MemorySwapMax = "60%";
+    MemoryZSwapMax = "50%";
   };
   systemd.services.nix-daemon.serviceConfig = {
     Slice = "anti-hungry.slice";
