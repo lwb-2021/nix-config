@@ -5,6 +5,8 @@
     builtins.elem (lib.getName pkg) [
 
       "feishu"
+      "libwemeetwrap"
+      "wemeet"
 
       "p7zip"
       "unrar"

@@ -38,10 +38,15 @@
       };
     };
   };
-  xdg.portal.config = lib.mkIf config.desktop.niri.enable {
-    niri = {
-      "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ]; # or "kde"
-      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+  xdg.portal = lib.mkIf config.desktop.niri.enable {
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config = {
+      niri = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        "org.freedesktop.impl.portal.Settings" = [ "gtk" "gnome" ];
+      };
     };
   };
 

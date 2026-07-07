@@ -27,7 +27,6 @@
 
       "com.tencent.WeChat"
       "com.qq.QQ"
-      "com.tencent.wemeet"
       "com.dingtalk.DingTalk"
       "com.wps.Office"
       "com.discordapp.Discord"

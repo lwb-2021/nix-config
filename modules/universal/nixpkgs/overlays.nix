@@ -26,6 +26,13 @@
     }); # TODO https://github.com/NixOS/nixpkgs/issues/513245
   })
   (final: prev: {
+    # For wemeet and others
+    # TODO: https://github.com/niri-wm/niri/pull/1791
+    niri = prev.niri.overrideAttrs (old: {
+      patches = (old.patches or [ ]) ++ [
+        ./niri-shm-fallback.patch
+      ];
+    });
   })
 
   inputs.nix-cachyos-kernel.overlays.default
