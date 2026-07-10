@@ -14,16 +14,15 @@
     let
       cfg = config.collections.agent;
     in
-    {
+    lib.mkIf cfg.enable {
       programs.opencode = {
-        enable = cfg.enable;
+        enable = true;
         enableMcpIntegration = true;
         context = builtins.readFile ./context.md;
         settings = {
+          shell = "nu";
           lsp = {
-            rust = {
-              command = [ (lib.getExe pkgs.rust-analyzer) ];
-            };
+            rust.command = [ (lib.getExe pkgs.rust-analyzer) ];
           };
           plugin = [ "opencode-pty" ];
           permission = {
@@ -43,12 +42,17 @@
         };
       };
       programs.mcp = {
-        enable = cfg.enable;
+        enable = true;
       };
       home.sessionVariables = {
         OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
+        OPENCODE_EXPERIMENTAL_LSP_TOOL = "true";
       };
-      data.local.directories = lib.mkIf cfg.enable [
+
+      data.persistence.directories = [
+        ".local/share/opencode" # OpenCode Sessions & Data
+      ];
+      data.local.directories = [
         ".cache/opencode"
         ".config/opencode"
       ];
