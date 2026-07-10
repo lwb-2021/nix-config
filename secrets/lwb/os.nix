@@ -8,5 +8,6 @@
   environment.systemPackages = [ pkgs.sops ];
   sops.secrets = {
     "easytier/default/secret-env" = { };
+    "hermes/secret-env" = { };
   };
 }

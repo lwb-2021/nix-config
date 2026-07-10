@@ -25,7 +25,7 @@
           "Workspace"
 
         ]
-        (lib.mkIf (params ? osConfig && params.osConfig.programs.steam.enable) [
+        (lib.mkIf (params.osConfig.programs.steam.enable or false) [
           ".steam"
           ".local/share/Steam"
 
@@ -33,11 +33,11 @@
           ".local/share/Mindustry" # TODO
         ])
 
-        (lib.mkIf (params ? osConfig && params.osConfig.services.sunshine.enable) [
+        (lib.mkIf (params.osConfig.services.sunshine.enable or false) [
           ".config/sunshine" # TODO
         ])
 
-        (lib.mkIf (params ? osConfig && params.osConfig.virtualisation.waydroid.enable) [
+        (lib.mkIf (params.osConfig.virtualisation.waydroid.enable or false) [
           ".local/share/waydroid"
         ])
 

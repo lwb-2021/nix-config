@@ -47,6 +47,7 @@
     ./fix.nix
   ];
 
+  services.hermes-agent.enable = true;
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
@@ -123,6 +124,7 @@
       "plugdev"
       "dialout"
       "podman"
+      "hermes"
     ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
     openssh.authorizedKeys.keys = [
