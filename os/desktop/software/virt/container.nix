@@ -2,7 +2,12 @@
   ...
 }:
 {
-  virtualisation.podman = {
-    enable = true;
+  virtualisation = {
+    containers = {
+      enable = true;
+    };
+    podman = {
+      enable = true;
+    };
   };
 }

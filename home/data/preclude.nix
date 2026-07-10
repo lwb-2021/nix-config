@@ -20,6 +20,8 @@
 
           ".local/share/icons/hicolor" # TODO
 
+          ".local/share/containers"
+
           "Workspace"
 
         ]

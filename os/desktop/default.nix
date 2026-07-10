@@ -122,6 +122,7 @@
       "networkmanager"
       "plugdev"
       "dialout"
+      "podman"
     ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
     openssh.authorizedKeys.keys = [
