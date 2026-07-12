@@ -16,7 +16,6 @@
       "ssh/keys/github" = { };
       "syncthing/passwords/backup" = { };
 
-      "aria2/rpc-secret" = { };
     };
   };
 

@@ -1,54 +1,39 @@
-{ config, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    motrix-next
-  ];
-  sops.templates."motrix-next-config.json".content = builtins.toJSON (
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  programs.aria2 = {
+    enable = true;
+    systemd.enable = true;
+    package = pkgs.aria2.overrideAttrs (prev: {
+      patches = (prev.patches or [ ]) ++ [ ./aria2-fast.patch ];
+    });
+    settings = {
+      auto-file-renaming = true;
+      continue = true;
+      dir = "${config.xdg.userDirs.download}";
+      always-resume = false;
 
-    (builtins.fromJSON (builtins.readFile ./motrix-next-config.json))
-    // {
-      preferences = {
-        autoCheckUpdate = false;
+      disk-cache = "64M";
+      file-allocation = "none";
 
-        colorScheme = "aurora";
+      http-accept-gzip = true;
+      split = 64;
+      max-connection-per-server = 128;
+      min-split-size = "1M";
 
-        autoHideWindow = true;
-        lightweightMode = true;
-        traySpeedometer = false;
-
-        continue = true;
-        dir = config.xdg.userDirs.download;
-        rpcListenPort = 16800;
-        rpcSecret = config.sops.placeholder."aria2/rpc-secret";
-
-        autoSyncTracker = true;
-        seedRatio = 2;
-
-        protocols = {
-          magnet = true;
-          motrixnext = true;
-          thunder = true;
-        };
-      };
-    }
-  );
-  home.tmpfiles.dataFile."com.motrix.next/config.json".source =
-    config.sops.templates."motrix-next-config.json".path;
-
-  data.persistence.files = [
-    {
-      file = ".local/share/com.motrix.next/download.session";
-      # method = "symlink";
-    }
-  ];
-  xdg.mimeApps.defaultApplications =
-    let
-      motrix-next-handler = ".motrix-next-wrapped-handler.desktop";
-    in
-    {
-      "x-scheme-handler/magnet" = motrix-next-handler;
-      "x-scheme-handler/thunder" = motrix-next-handler;
-      "x-scheme-handler/motrixnext" = motrix-next-handler;
+      bt-detach-seed-only = true;
+      bt-force-encryption = true;
+      bt-max-peers = 128;
+      bt-tracker = builtins.readFile "${inputs.bt-tracker-list}/best_aria2.txt";
+      dht-entry-point = "dht.transmissionbt.com:6881";
+      enable-dht = true;
+      enable-peer-exchange = true;
+      seed-ratio = 2.0;
     };
-  desktop.autostart.commands = [ "motrix-next --autostart & " ];
+  };
+  home.packages = with pkgs; [ ariang ];
 }

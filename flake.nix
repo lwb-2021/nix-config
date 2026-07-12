@@ -8,6 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Modules
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +34,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #
+    # Applications
+
     hermes-agent = {
       url = "git+https://github.com/NousResearch/hermes-agent?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -60,6 +63,12 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
+    };
+
+    # Resources
+    bt-tracker-list = {
+      url = "github:XIU2/TrackersListCollection";
+      flake = false;
     };
   };
   outputs =

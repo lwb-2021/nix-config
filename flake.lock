@@ -68,6 +68,22 @@
         "type": "github"
       }
     },
+    "bt-tracker-list": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783816099,
+        "narHash": "sha256-AoxSrafrWhiV+eHtwqK+ZCKZZv5nOXMT7w4w8b50Tkw=",
+        "owner": "XIU2",
+        "repo": "TrackersListCollection",
+        "rev": "bf353671c843beffacf2468a27a0650913683663",
+        "type": "github"
+      },
+      "original": {
+        "owner": "XIU2",
+        "repo": "TrackersListCollection",
+        "type": "github"
+      }
+    },
     "cachyos-kernel": {
       "flake": false,
       "locked": {
