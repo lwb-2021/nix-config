@@ -11,6 +11,9 @@
         cudaSupport = false;
       };
     };
+    master = import inputs.nixpkgs-master {
+      localSystem = "x86_64-linux";
+    };
   })
   (final: prev: {
     thunar-archive-plugin = prev.thunar-archive-plugin.overrideAttrs (_: {
@@ -21,9 +24,12 @@
 
   })
   (final: prev: {
-    openldap = prev.openldap.overrideAttrs (_: {
-      doCheck = false;
-    }); # TODO https://github.com/NixOS/nixpkgs/issues/513245
+    python3Packages = prev.python3Packages.override {
+      overrides = python-final: python-prev: {
+        inherit (final.master.python3Packages) catppuccin;
+      };
+    };
+    inherit (final.master) catppuccin-gtk;
   })
   (final: prev: {
     # For wemeet and others

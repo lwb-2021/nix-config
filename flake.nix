@@ -2,6 +2,7 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=1&ref=nixos-unstable";
+    nixpkgs-master.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=1&ref=master";
 
     nur = {
       url = "github:nix-community/NUR";
