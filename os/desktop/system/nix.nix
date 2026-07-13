@@ -6,6 +6,7 @@
     settings = {
       connect-timeout = 5;
       max-jobs = 8;
+      cores = 8;
 
       log-lines = 25;
 
@@ -64,10 +65,10 @@
     IOWeight = 10;
 
     MemoryAccounting = true; # Allow to control with systemd-cgtop
-    MemoryHigh = "45%";
+    MemoryHigh = "50%";
     MemoryMax = "60%";
     MemorySwapMax = "60%";
-    MemoryZSwapMax = "50%";
+    MemoryZSwapMax = "60%";
   };
   systemd.services.nix-daemon.serviceConfig = {
     Slice = "anti-hungry.slice";
