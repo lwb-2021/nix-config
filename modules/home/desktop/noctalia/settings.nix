@@ -76,7 +76,10 @@
       detached_panel = true;
       drawer = true;
       match_adjacent_spacing = true;
-      pinned = [ "Notes | Obsidian" ];
+      pinned = [
+        "Notes | Obsidian"
+        "waylyrics"
+      ];
     };
     spacer_2 = {
       length = 24;

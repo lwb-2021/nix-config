@@ -33,5 +33,19 @@
       default-column-width.proportion = 0.6;
       default-window-height.proportion = 0.5;
     }
+    {
+      matches = [ { app-id = "io.github.waylyrics.Waylyrics"; } ];
+      open-floating = true;
+      focus-ring.enable = false;
+      default-floating-position = {
+        relative-to = "bottom";
+        x = 0;
+        y = 120;
+      };
+      default-column-width.proportion = 0.4;
+      default-window-height.fixed = 120;
+      background-effect.blur = false;
+
+    }
   ];
 }
