@@ -9,7 +9,8 @@ let
   exts = inputs.vicinae-extensions.packages.${localSystem};
 in
 {
-  data.local.directories = [ ".local/share/vicinae" ]; # file-indexer.db is too large
+  data.persistence.directories = [ ".local/share/vicinae" ];
+  data.local.directories = [ ".cache/vicinae" ]; # cache file-indexer.db
   sops.templates."vicinae.json".content = builtins.toJSON {
     providers = {
       "@knoopx/${exts.nix.name}" = {
@@ -61,7 +62,7 @@ in
       };
     };
     extensions = with exts; [
-      bluetooth
+      # bluetooth
       firefox
       niri
       nix
