@@ -37,7 +37,7 @@
       #!/bin/bash
       key=$(basename "$1" | tr -d "'" | tr -d ":" | tr -d " ")
       pass=$(pass show "SSH/Passphrases/$key" 2>/dev/null)
-      if [[ -z "$pass" || $1 =~ fingerprint ]]; then
+      if [[ -z "$pass" ]]; then
           if [ -n "$WAYLAND_DISPLAY" ]; then
               pass=$(zenity --entry --hide-text --text="$1")
           else
