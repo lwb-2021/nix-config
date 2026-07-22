@@ -71,6 +71,10 @@
       url = "github:XIU2/TrackersListCollection";
       flake = false;
     };
+    skills = {
+      url = "git+https://github.com/lwb-2021/skills.git?shallow=1";
+      flake = false;
+    };
   };
   outputs =
     inputs:

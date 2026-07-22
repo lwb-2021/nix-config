@@ -919,9 +919,27 @@
         "nixpkgs-master": "nixpkgs-master",
         "noctalia": "noctalia",
         "nur": "nur",
+        "skills": "skills",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "vicinae-extensions": "vicinae-extensions"
+      }
+    },
+    "skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784779916,
+        "narHash": "sha256-jR3l4EYMktGNxIDk6/wR6cQ/V2WVWbNalPUxfJY68pM=",
+        "ref": "refs/heads/master",
+        "rev": "a20850b1ba1bfc64e3722d999054bac5c886dbbb",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/lwb-2021/skills.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/lwb-2021/skills.git"
       }
     },
     "sops-nix": {
