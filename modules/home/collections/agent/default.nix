@@ -21,6 +21,7 @@
       ext-config = name: "${pi-config-root}/extensions/${name}/config.json";
     in
     lib.mkIf cfg.enable {
+      collections.modern-shell.enable = lib.mkDefault true;
       programs.pi-coding-agent = {
         enable = true;
         context = ./context.md;

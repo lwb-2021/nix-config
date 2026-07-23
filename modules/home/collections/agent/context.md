@@ -20,6 +20,6 @@
 - 遵循声明式原则，**禁止** `nix profile install`等行为。
 
 ## 工具和提示
-- 如果临时使用一个当前环境不存在的包，可以通过`nix run nixpkgs#package-name -- <argv>`直接运行。
+- 可以使用`nix run`运行未安装软件包。
 - 如需要完整FHS环境，可以使用`podman`运行一个临时的alpine容器
 - 优先使用nushell处理数据

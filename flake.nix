@@ -54,6 +54,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia.url = "git+https://github.com/noctalia-dev/noctalia-shell.git?ref=cachix&shallow=1";
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";

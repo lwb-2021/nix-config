@@ -1,4 +1,13 @@
-{ config, lib, ... }: {
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
+{
+  imports = [
+    inputs.nix-index-database.homeModules.default
+  ];
   options = with lib; {
     collections.modern-shell = {
       enable = mkEnableOption { };
@@ -9,6 +18,9 @@
       fzf = {
         enable = true;
         historyWidget.command = ""; # Disable history widget
+      };
+      nix-index-database = {
+        comma.enable = true;
       };
     };
   };
