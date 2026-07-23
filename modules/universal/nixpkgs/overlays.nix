@@ -24,12 +24,6 @@
 
   })
   (final: prev: {
-    python3Packages = prev.python3Packages.override {
-      overrides = python-final: python-prev: {
-        inherit (final.master.python3Packages) catppuccin;
-      };
-    };
-    inherit (final.master) catppuccin-gtk;
   })
   (final: prev: {
     # For wemeet and others
