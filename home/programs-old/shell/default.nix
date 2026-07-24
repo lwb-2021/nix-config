@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   plug = name: {
     inherit name;
@@ -54,21 +51,7 @@ in
     enable = true;
     plugins = with pkgs.nushellPlugins; [
     ];
-    extraConfig = ''
-      $env.config.menus ++= [{
-        name: completion_menu
-        only_buffer_difference: false
-        marker: "| "
-        type: {
-          layout: ide
-        }
-        style: {
-          text: white
-          selected_text: white_reverse
-          description_text: yello
-        }
-      }]
-    '';
+    extraConfig = lib.mkOrder 9999 (builtins.readFile ./extra-config.nu);
   };
 
   programs.carapace.enable = true;
