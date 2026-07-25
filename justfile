@@ -15,5 +15,6 @@ switch:
 
 # For agent use: apply changes with polkit
 apply:
+  nix flake update my-neovim skills
   nh os switch -e pkexec --no-nom
 
