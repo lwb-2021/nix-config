@@ -69,10 +69,7 @@ in
         file = ".local/share/fish/fish_history";
         method = "symlink";
       }
-      {
-        file = ".config/nushell/history.txt";
-        method = "symlink";
-      }
+      ".config/nushell/history.sqlite3"
     ];
   };
 }
