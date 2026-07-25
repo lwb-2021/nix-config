@@ -949,10 +949,10 @@
     "skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1784779916,
-        "narHash": "sha256-jR3l4EYMktGNxIDk6/wR6cQ/V2WVWbNalPUxfJY68pM=",
+        "lastModified": 1784944757,
+        "narHash": "sha256-pz1pyeMa16xUlilRZybASiHNyM9mvA1pkTw5rXwkDRU=",
         "ref": "refs/heads/master",
-        "rev": "a20850b1ba1bfc64e3722d999054bac5c886dbbb",
+        "rev": "eb96ec7051b90c8891ee86e8968c7c90759ecefc",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/lwb-2021/skills.git"

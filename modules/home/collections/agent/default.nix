@@ -48,6 +48,9 @@
             # Basic
             "npm:@gotgenes/pi-permission-system"
             "npm:pi-rtk-optimizer"
+
+            # Commands
+            "npm:pi-btw"
             "npm:pi-fast-resume"
             "npm:pi-workspace-history"
 
