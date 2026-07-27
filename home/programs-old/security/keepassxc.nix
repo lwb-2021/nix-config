@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.keepassxc = {
     enable = true;
@@ -26,10 +21,6 @@
         MinimizeToTray = true;
         ShowTrayIcon = true;
         TrayIconAppearance = "colorful";
-      };
-      SSHAgent = {
-        Enabled = true;
-        UseOpenSSH = true;
       };
     };
   };

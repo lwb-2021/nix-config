@@ -21,7 +21,7 @@
       "github" = {
         host = "github.com";
         user = "git";
-        addKeysToAgent = "1h";
+        addKeysToAgent = "10m";
         identityFile = config.sops.secrets."ssh/keys/github".path;
       };
     };

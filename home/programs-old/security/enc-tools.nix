@@ -25,16 +25,13 @@
   };
   services.gpg-agent = {
     enable = true;
-    defaultCacheTtl = 31536000;
+    defaultCacheTtl = 600;
     maxCacheTtl = 31536000;
     pinentry.package = pkgs.pinentry-gnome3;
     extraConfig = ''
       allow-preset-passphrase
     '';
   };
-  xdg.configFile."pam-gnupg".text = ''
-    EFE4C9541F27C5A3D6A848720893F1A121010CDF
-  '';
   data = {
     local.directories = [
       ".gnupg" # TODO
