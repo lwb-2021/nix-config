@@ -36,4 +36,7 @@
     };
   };
   home.packages = with pkgs; [ ariang ];
+  data.persistence.files = [
+    ".cache/aria2/dht.dat"
+  ];
 }
