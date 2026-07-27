@@ -47,7 +47,8 @@
     ./fix.nix
   ];
 
-  services.hermes-agent.enable = true;
+  services.searx.enable = true;
+
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
@@ -114,6 +115,8 @@
   #     tree
   #   ];
   # };
+  users.groups.backup = { };
+
   users.users.lwb = {
     isNormalUser = true;
     createHome = true;
@@ -124,7 +127,7 @@
       "plugdev"
       "dialout"
       "podman"
-      "hermes"
+      "backup"
     ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
     openssh.authorizedKeys.keys = [

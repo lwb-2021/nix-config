@@ -37,11 +37,6 @@
 
     # Applications
 
-    hermes-agent = {
-      url = "git+https://github.com/NousResearch/hermes-agent?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     my-neovim = {
