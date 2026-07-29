@@ -51,39 +51,31 @@ sniffer:
     - "+.apple.com"
 
 
+
+health-check-defaults: &health-check-defaults
+  enable: true
+  url: https://www.google.com/generate_204?abdfmkdsflka=lkdjsaklfjl
+  interval: 1800
+  timeout: 3000
+  expected-status: 204
+  
 proxy-providers:
   free-servers:
     type: "http"
     url: "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
     interval: 43200
     health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 1000
-      expected-status: 204
-
-  free-vpn-subscribers:
-    type: "http"
-    url: "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/clash.yaml"
-    interval: 43200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 1000
-      expected-status: 204
-
+      <<: *health-check-defaults
   nwalls:
     type: "http"
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 86400
     health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 1000
-      expected-status: 204
+      <<: *health-check-defaults
+
+  # deny free-vpn-subscribers
+
+
 
 proxy-groups:
   - name: Proxy
@@ -96,20 +88,18 @@ proxy-groups:
 
   - name: Fallback
     type: fallback
-    interval: 300
-    timeout: 1000
+    interval: 1800
+    timeout: 3000
     tolerance: 50
     use:
       - nwalls
       - free-servers
-      - free-vpn-subscribers
 
   - name: Select
     type: select
     use:
       - nwalls
       - free-servers
-      - free-vpn-subscribers
 
   - name: Balance
     type: load-balance
