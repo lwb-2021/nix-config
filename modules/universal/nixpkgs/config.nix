@@ -80,8 +80,6 @@
 
       "windows-fonts"
 
-      "010editor"
-      "burpsuite"
     ];
   permittedInsecurePackages = [
   ];

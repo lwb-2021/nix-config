@@ -113,7 +113,6 @@ in
 
     ./programs-old/education/anki.nix
 
-    ./programs-old/cybersecurity.nix
   ];
 
 }
