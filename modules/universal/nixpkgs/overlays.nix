@@ -28,7 +28,7 @@
   (final: prev: {
     # For wemeet and others
     # TODO: https://github.com/niri-wm/niri/pull/1791
-    niri = prev.niri.overrideAttrs (old: {
+    niri = final.master.niri.overrideAttrs (old: {
       patches = (old.patches or [ ]) ++ [
         ./niri-shm-fallback.patch
       ];
