@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, ... }@param:
 {
 
   imports = [
@@ -39,18 +39,24 @@
     };
   };
   config = {
-    home.persistence = {
-      "/data/persistence" = {
-        hideMounts = true;
-        directories = config.data.persistence.directories;
-        files = config.data.persistence.files;
-      };
-      "/data/local" = {
-        hideMounts = true;
-        directories = config.data.local.directories;
-        files = config.data.local.files;
-      };
-    };
+    home =
+      if (param ? osConfig) then
+        {
+          persistence = {
+            "/data/persistence" = {
+              hideMounts = true;
+              directories = config.data.persistence.directories;
+              files = config.data.persistence.files;
+            };
+            "/data/local" = {
+              hideMounts = true;
+              directories = config.data.local.directories;
+              files = config.data.local.files;
+            };
+          };
+        }
+      else
+        { };
 
     services.restic = {
       enable = true;
