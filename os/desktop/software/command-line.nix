@@ -46,5 +46,7 @@
     (lib.getExe pkgs.fish)
     "/etc/profiles/per-user/lwb/bin/nu"
     (lib.getExe pkgs.nushell)
+    "/etc/profiles/per-user/lwb/bin/xonsh"
+    (lib.getExe pkgs.xonsh)
   ];
 }

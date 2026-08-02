@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   inputs,
   ...
 }:
@@ -22,6 +23,12 @@
       nix-index-database = {
         comma.enable = true;
       };
+    };
+
+    home = {
+      packages = with pkgs; [
+        (xonsh.override { extraPackages = (ps: config.programs.python.extraPackages); })
+      ];
     };
   };
 }
