@@ -11,7 +11,7 @@
         default = false;
       };
       package = mkPackageOption pkgs "python3" { };
-      pythonPackages = mkOption {
+      extraPackages = mkOption {
         type = types.listOf types.package;
         default = [ ];
       };
@@ -22,7 +22,7 @@
   };
   config = {
     programs.python.finalPackage = lib.mkDefault (
-      config.programs.python.package.withPackages (ps: config.programs.python.pythonPackages)
+      config.programs.python.package.withPackages (ps: config.programs.python.extraPackages)
     );
     home.packages = lib.mkIf config.programs.python.enable [
       config.programs.python.finalPackage
