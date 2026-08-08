@@ -1,14 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
-  services.greetd = {
+
+  imports = [
+    inputs.noctalia-greeter.nixosModules.default
+  ];
+
+  programs.noctalia-greeter = {
     enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --user-menu --remember --asterisks";
-        user = "greeter";
-      };
-    };
   };
 
   programs.niri = {
