@@ -28,7 +28,7 @@
       serif = sansSerif;
       sizes = {
         applications = 12;
-        terminal = 12;
+        terminal = 14;
         desktop = 14;
         popups = 14;
       };
