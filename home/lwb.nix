@@ -95,7 +95,6 @@ in
 
     ./programs-old/shell
     ./programs-old/shell/tmux
-    ./programs-old/shell/atuin.nix
     ./programs-old/shell/pay-respect.nix
     ./programs-old/shell/starship.nix
 
@@ -114,5 +113,4 @@ in
     ./programs-old/education/anki.nix
 
   ];
-
 }
