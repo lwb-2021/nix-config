@@ -1,10 +1,14 @@
 {
+  lib,
   pkgs,
   ...
 }:
 {
   # TODO
-  data.local.directories = [ ".config/Code" ];
+  data.local.directories = [
+    ".config/Code"
+    ".vscode-shared" # VSCode shared storage
+  ];
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
@@ -14,6 +18,7 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       userSettings = {
+        "chat.disableAIFeatures" = true;
 
         "editor.acceptSuggestionOnEnter" = "smart";
 
@@ -26,6 +31,9 @@
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
         "editor.autoIndentOnPaste" = true;
+        "editor.pasteAs.preferences" = [
+          "text.pylance.reindent"
+        ];
 
         "files.autoSave" = "afterDelay";
         "files.autoGuessEncoding" = true;
@@ -37,12 +45,18 @@
         };
 
         "terminal.integrated.defaultProfile.linux" = "nu";
+        "terminal.integrated.stickyScroll.ignoredCommands" = [
+          "pi"
+        ];
 
         "window.dialogStyle" = "custom";
 
         "extensions.experimental.affinity" = {
           "asvetliakov.vscode-neovim" = 1;
         };
+
+        "remote.SSH.configFile" = "~/.ssh/config.dynamic";
+        "remote.SSH.externalSSH_ASKPASS" = true;
 
         # Git
         "github.gitProtocol" = "ssh";
@@ -51,6 +65,7 @@
         # Python
         "python.languageServer" = "Pylance";
         "ty.disableLanguageServices" = true;
+        "ty.path" = [ (lib.getExe pkgs.ty) ];
 
         # Java
 
@@ -59,15 +74,15 @@
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
         "nix.serverSettings" = {
           "nixd" = {
-            # "formatting": {
-            #   "command": ["nixfmt"],
-            # },
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
             "options" = {
               "nixos" = {
-                "expr" = "(builtins.getFlake \"./.\").nixosConfigurations.lwb.options";
+                "expr" = "(builtins.getFlake (builtins.getEnv \"NH_FLAKE\")).nixosConfigurations.lwb.options";
               };
               "home-manager" = {
-                "expr" = "(builtins.getFlake \"./.\").homeConfigurations.lwb.options";
+                "expr" = "(builtins.getFlake (builtins.getEnv \"NH_FLAKE\")).homeConfigurations.lwb.options";
               };
             };
           };
@@ -79,8 +94,8 @@
           # Functionality
           gruntfuggly.todo-tree
           formulahendry.code-runner
-          adpyke.codesnap
           ms-vscode-remote.remote-ssh
+          formulahendry.acp-client
 
           # Edit
           usernamehw.errorlens
@@ -97,9 +112,6 @@
           waderyan.gitblame
 
           github.vscode-github-actions
-
-          # Nix
-          # bbenoist.nix
 
           # Nushell
           thenuprojectcontributors.vscode-nushell-lang
