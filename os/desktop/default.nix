@@ -8,6 +8,7 @@
   imports = [
     ../universal/bootloader.nix
     ../universal/mirrors.nix
+    ../universal/printing.nix
     ../universal/proxy
     ../universal/security.nix
     ../universal/wayland.nix
@@ -93,12 +94,6 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      pantum-driver
-    ];
-  };
 
   # Enable sound.
   # services.pulseaudio.enable = true;
