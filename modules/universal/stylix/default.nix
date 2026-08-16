@@ -19,8 +19,8 @@
         package = pkgs.source-han-sans;
       };
       monospace = {
-        name = "JetBrainsMono NF";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrains Maple Mono";
+        package = pkgs.nur.repos.lwb-2021.jetbrains-maple-mono-nerd;
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
