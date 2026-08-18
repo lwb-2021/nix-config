@@ -93,7 +93,6 @@
         [
           # Functionality
           gruntfuggly.todo-tree
-          formulahendry.code-runner
           ms-vscode-remote.remote-ssh
           formulahendry.acp-client
 
@@ -138,14 +137,10 @@
           ## TS & Vue
           vue.volar
 
-          # AI
-          github.copilot-chat
-
         ]
         ++ (with pkgs.vscode-extensions; [
           # Features
           mkhl.direnv
-          ms-vscode.live-server
           alefragnani.project-manager
 
           # Languages
