@@ -104,7 +104,6 @@ in
     ./programs-old/shell/cli-tools/jq.nix
     ./programs-old/shell/cli-tools/navi.nix
     ./programs-old/shell/cli-tools/ripgrep.nix
-    ./programs-old/shell/cli-tools/taskwarrior.nix
     ./programs-old/shell/cli-tools/yazi.nix
     ./programs-old/shell/cli-tools/zoxide.nix
 

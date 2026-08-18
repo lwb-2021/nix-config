@@ -59,6 +59,7 @@
       "zerotierone"
 
       "ttf-wps-fonts"
+      "wpsoffice-cn"
 
       "pantum-driver"
 
@@ -69,17 +70,14 @@
       "vscode"
       "vscode-extension-ms-python-vscode-pylance"
       "vscode-extension-mhutchie-git-graph"
-      "vscode-extension-github-copilot"
       "vscode-extension-ms-vscode-remote-remote-ssh"
 
       "idea"
-
       "drawio"
 
       "evafast"
 
       "windows-fonts"
-
     ];
   permittedInsecurePackages = [
   ];
