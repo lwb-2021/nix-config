@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 
-  default = "bing";
+  default = "google";
   engines = {
     nix-packages = {
       name = "Nix Packages";
