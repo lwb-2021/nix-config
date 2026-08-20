@@ -157,6 +157,7 @@ rules:
   - DOMAIN-SUFFIX,nixos-cuda.org,Proxy
   - DOMAIN-SUFFIX,nixos.org,Proxy
   - DOMAIN-SUFFIX,openrouter.ai,Proxy
+  - DOMAIN-SUFFIX,opencode.ai,Proxy
   - DOMAIN-SUFFIX,xuyh0120.win,Proxy
 
   - GEOSITE,private,DIRECT
