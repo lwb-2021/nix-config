@@ -23,6 +23,17 @@
     });
 
   })
+
+  (final: prev: {
+    inherit (prev.lixPackageSets.stable)
+      nixpkgs-review
+      # nix-direnv # No need to add this and this also causes error
+      nix-eval-jobs
+      nix-fast-build
+      colmena
+      ;
+  })
+
   (final: prev: {
   })
   (final: prev: {

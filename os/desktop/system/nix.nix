@@ -1,8 +1,7 @@
-{
-  ...
-}:
+{ pkgs, ... }:
 {
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
     settings = {
       connect-timeout = 5;
       max-jobs = 8;
@@ -16,7 +15,6 @@
       experimental-features = [
         "nix-command"
         "flakes"
-        "ca-derivations"
       ];
 
       extra-substituters = [
