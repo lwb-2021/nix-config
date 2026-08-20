@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   services.printing = {
     enable = true;
+    browsed.enable = false;
     drivers = with pkgs; [
       pantum-driver
     ];
