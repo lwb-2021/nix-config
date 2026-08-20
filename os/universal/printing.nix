@@ -10,4 +10,5 @@
     enable = true;
     nssmdns4 = true; # For discovered printer to work
   };
+  environment.systemPackages = with pkgs; [ system-config-printer ];
 }
