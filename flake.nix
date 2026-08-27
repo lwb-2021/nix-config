@@ -1,8 +1,8 @@
 {
   description = "My NixOS flake";
   inputs = {
-    nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=1&ref=nixos-unstable";
-    nixpkgs-master.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=1&ref=master";
+    nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=nixos-unstable";
+    nixpkgs-master.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=master";
 
     nur = {
       url = "github:nix-community/NUR";
@@ -54,7 +54,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia.url = "git+https://github.com/noctalia-dev/noctalia-shell.git?ref=cachix&shallow=1";
+    noctalia.url = "git+https://github.com/noctalia-dev/noctalia-shell.git?ref=cachix&shallow=true";
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +65,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vicinae-extensions = {
-      url = "git+https://github.com/vicinaehq/extensions?shallow=1";
+      url = "git+https://github.com/vicinaehq/extensions?shallow=true";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
@@ -77,7 +77,7 @@
       flake = false;
     };
     skills = {
-      url = "git+https://github.com/lwb-2021/skills.git?shallow=1";
+      url = "git+https://github.com/lwb-2021/skills.git?shallow=true";
       flake = false;
     };
   };
