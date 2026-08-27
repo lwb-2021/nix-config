@@ -60,6 +60,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    selector4nix.url = "github:StarryReverie/selector4nix";
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
