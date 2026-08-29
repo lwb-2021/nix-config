@@ -34,9 +34,9 @@
       };
     };
     cursor = {
-      name = "phinger-cursors-dark";
-      package = pkgs.phinger-cursors;
-      size = 24;
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 32;
     };
     icons = rec {
       dark = "BeautyLine";
