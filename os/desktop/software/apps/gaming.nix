@@ -7,6 +7,11 @@
 {
   programs.steam = {
     enable = true;
+    extraPackages = with pkgs; [
+      libcxx # For mods
+      llvmPackages.libunwind # For KSP Principia
+      nur.repos.DzmingLi.windows-fonts
+    ];
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
