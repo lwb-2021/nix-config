@@ -9,6 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-aspects.url = "github:denful/flake-aspects";
+
     # Modules
 
     home-manager = {
@@ -78,13 +81,20 @@
       flake = false;
     };
   };
-  outputs =
-    inputs:
-    let
-      system = "x86_64-linux";
-
+  
+  outputs = inputs@{ flake-parts, flake-aspects, ... }:
+    let 
       my-utils = import ./utils/default.nix { inherit (inputs.nixpkgs) lib; };
     in
-    import ./outputs my-utils { inherit inputs my-utils; };
+    flake-parts.lib.mkFlake { inherit inputs; } 
+    {
+      imports = [ flake-aspects.flakeModule ];
+      
+      flake = import ./outputs my-utils { inherit inputs my-utils; };
+
+      systems = [
+        "x86_64-linux"
+      ];
+    };
 
 }
