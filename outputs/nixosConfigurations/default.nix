@@ -7,7 +7,7 @@
       ../../modules/os
 
       inputs.impermanence.nixosModules.impermanence
-      inputs.stylix.nixosModules.stylix
+
       inputs.sops-nix.nixosModules.sops
       inputs.nix-flatpak.nixosModules.nix-flatpak
 

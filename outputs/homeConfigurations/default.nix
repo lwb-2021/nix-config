@@ -7,7 +7,7 @@
       ../../modules/home
 
       inputs.sops-nix.homeManagerModules.sops
-      inputs.stylix.homeModules.stylix
+
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
       inputs.noctalia.homeModules.default
 

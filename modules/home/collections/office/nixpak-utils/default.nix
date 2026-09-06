@@ -26,4 +26,22 @@ rec {
     (sloth.mkdir (sloth.concat' sloth.appDir path))
     (sloth.concat' sloth.homeDir path)
   ];
+  mkWrap =
+    name: params:
+    pkgs.symlinkJoin {
+      name = "${name}-wrapped";
+      paths = [ pkgs.${name} ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        for f in $out/bin/*; do
+          wrapProgram "$f" \
+            --prefix PATH : ${
+              pkgs.lib.makeBinPath [
+                pkgs.coreutils
+                pkgs.flatpak-xdg-utils
+              ]
+            }
+        done
+      '';
+    };
 }

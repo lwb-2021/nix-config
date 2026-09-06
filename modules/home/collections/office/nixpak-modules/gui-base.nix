@@ -60,9 +60,8 @@
 
       env =
         let
-          icons = params.homeConfig.stylix.icons.package or pkgs.adwaita-icon-theme;
-          cursor = params.homeConfig.stylix.cursor.package or pkgs.adw-gtk3;
-          # Stylix compatibility
+          icons = params.homeConfig.theming.icons.package or pkgs.adwaita-icon-theme;
+          cursor = params.homeConfig.theming.cursor.package or pkgs.adw-gtk3;
         in
         {
           XDG_DATA_DIRS = lib.makeSearchPath "share" [

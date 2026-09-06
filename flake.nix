@@ -30,11 +30,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:lwb-2021/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Applications
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";

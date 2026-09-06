@@ -13,8 +13,16 @@
   battery.warning_threshold = 20;
   theme = {
     mode = "dark";
+    # pure_black_dark = true;
     source = "builtin";
     builtin = "Catppuccin";
+
+    templates = {
+      enable_builtin_templates = true;
+      builtin_ids = [ "kitty" "niri" "starship" ];
+      enable_community_templates = true;
+      community_ids = [ "fcitx5" "vicinae" "fzf" "yazi"];
+    };
   };
 
   wallpaper.enabled = false;

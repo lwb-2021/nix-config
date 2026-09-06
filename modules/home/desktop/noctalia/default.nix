@@ -10,7 +10,6 @@ in
 {
   programs.noctalia = {
     enable = cfg.enable;
-    # package = pkgs.noctalia-shell;
     settings = import ./settings.nix;
   };
 
