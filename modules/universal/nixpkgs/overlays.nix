@@ -37,12 +37,18 @@
   (final: prev: {
   })
   (final: prev: {
-    # For wemeet and others
-    # TODO: https://github.com/niri-wm/niri/pull/1791
     niri = final.master.niri.overrideAttrs (old: {
+      # TODO: https://github.com/niri-wm/niri/pull/179
       patches = (old.patches or [ ]) ++ [
         ./niri-shm-fallback.patch
       ];
+
+      # TODO: https://github.com/niri-wm/niri/issues/254
+      postPatch = (old.postPatch or "") + ''
+        substituteInPlace resources/niri-session \
+          --replace-fail 'systemctl --user import-environment' \
+          'systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP NIRI_SOCKET DBUS_SESSION_BUS_ADDRESS PATH'
+      '';
     });
   })
 
