@@ -12,6 +12,13 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-aspects.url = "github:denful/flake-aspects";
 
+    # Dotfiles
+
+    dotfiles = {
+      url = "github:lwb-2021/dotfiles";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Modules
 
     home-manager = {
@@ -36,11 +43,6 @@
     # Applications
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-    my-neovim = {
-      url = "github:lwb-2021/neovim-config";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     niri = {
       url = "github:epireyn/niri-flake";
@@ -81,15 +83,15 @@
       flake = false;
     };
   };
-  
-  outputs = inputs@{ flake-parts, flake-aspects, ... }:
-    let 
+
+  outputs =
+    inputs@{ flake-parts, flake-aspects, ... }:
+    let
       my-utils = import ./utils/default.nix { inherit (inputs.nixpkgs) lib; };
     in
-    flake-parts.lib.mkFlake { inherit inputs; } 
-    {
+    flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ flake-aspects.flakeModule ];
-      
+
       flake = import ./outputs my-utils { inherit inputs my-utils; };
 
       systems = [
