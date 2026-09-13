@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (jetbrains.idea.override {
-      forceWayland = true;
-    })
+    jetbrains.idea
   ];
   data.local.directories = [
     ".local/share/JetBrains"
