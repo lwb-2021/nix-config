@@ -9,7 +9,6 @@
     };
   };
 
-  services.syncthing.openDefaultPorts = true;
 
   networking.firewall =
     let
@@ -17,6 +16,7 @@
         from = 1714;
         to = 1764;
       };
+
     in
     {
       enable = true;
@@ -25,6 +25,13 @@
       ];
       allowedUDPPortRanges = [
         kdeconnect
+      ];
+      allowedTCPPorts = [
+        22000 # Syncthing
+      ];
+      allowedUDPPorts = [
+        22000 # Syncthing
+        21027 # Syncthing discovery
       ];
     };
 
