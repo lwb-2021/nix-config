@@ -1,102 +1,103 @@
+# DO-NOT-EDIT. This file was auto-generated using github:denful/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
-  description = "My NixOS flake";
+  description = "My NixOS Configuration";
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./flake-file.nix;
+
   inputs = {
-    nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=nixos-unstable";
-    nixpkgs-master.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=master";
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-aspects.url = "github:denful/flake-aspects";
-
-    # Dotfiles
-
-    dotfiles = {
-      url = "github:lwb-2021/dotfiles";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Modules
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    impermanence.url = "github:nix-community/impermanence";
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Applications
-
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-    niri = {
-      url = "github:epireyn/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia.url = "git+https://github.com/noctalia-dev/noctalia-shell.git?ref=cachix&shallow=true";
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    selector4nix.url = "github:StarryReverie/selector4nix";
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    vicinae-extensions = {
-      url = "git+https://github.com/vicinaehq/extensions?shallow=true";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    # Resources
     bt-tracker-list = {
       url = "github:XIU2/TrackersListCollection";
       flake = false;
     };
-    skills = {
-      url = "git+https://github.com/lwb-2021/skills.git?shallow=true";
-      flake = false;
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dotfiles = {
+      url = "github:lwb-2021/dotfiles";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        import-tree.follows = "import-tree";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    flake-aspects = {
+      url = "github:denful/flake-aspects";
+    };
+    flake-file = {
+      url = "github:denful/flake-file";
+    };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    import-tree = {
+      url = "github:denful/import-tree";
+    };
+    niri = {
+      url = "github:epireyn/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpak = {
+      url = "github:nixpak/nixpak";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    nixpkgs = {
+      url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=nixos-unstable";
+    };
+    nixpkgs-master = {
+      url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=master";
+    };
+    noctalia = {
+      url = "git+https://github.com/noctalia-dev/noctalia-shell.git?ref=cachix&shallow=true";
+    };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    selector4nix = {
+      url = "github:StarryReverie/selector4nix";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vicinae-extensions = {
+      url = "git+https://github.com/vicinaehq/extensions?shallow=true";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs =
-    inputs@{ flake-parts, flake-aspects, ... }:
-    let
-      my-utils = import ./utils/default.nix { inherit (inputs.nixpkgs) lib; };
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ flake-aspects.flakeModule ];
-
-      flake = import ./outputs my-utils { inherit inputs my-utils; };
-
-      systems = [
-        "x86_64-linux"
-      ];
-    };
-
 }

@@ -32,15 +32,8 @@
     ffmpeg-full
     p7zip-rar
     unrar
-
-    nvfetcher
-
   ];
 
-  programs.nh = {
-    enable = true;
-    flake = "/home/lwb/Configurations/nix-config";
-  };
   environment.shells = [
     "/etc/profiles/per-user/lwb/bin/fish"
     (lib.getExe pkgs.fish)
