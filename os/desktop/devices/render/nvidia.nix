@@ -16,7 +16,6 @@
 
     nvidiaSettings = false;
 
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
       offload = {
         enable = true;

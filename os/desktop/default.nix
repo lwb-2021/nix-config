@@ -16,7 +16,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./system/kernel.nix
     ./system/nix.nix
     ./system/filesystem.nix
 
@@ -28,7 +27,6 @@
 
     ./devices/power/tlp.nix
 
-    ./devices/network/network.nix
     ./devices/network/openssh.nix
     ./devices/network/vpn.nix
 
