@@ -25,9 +25,10 @@
 
     dynamicFilesFrom = "find ${config.xdg.dataHome}/PrismLauncher -name \"level.dat\" -exec dirname {} \\;";
     extraBackupArgs = [
-      "--group-by"
-      "paths"
+      "--group-by paths"
+      "--compression auto"
     ];
+    pruneOpts = [ "--keep-last 4" ];
   };
 
   data.local.directories = [ ".local/share/PrismLauncher" ];
