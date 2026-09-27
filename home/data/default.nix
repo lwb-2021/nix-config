@@ -67,6 +67,11 @@
           paths = [
             "/data/persistence/home/${config.home.username}"
           ];
+          exclude = [
+            ".direnv"
+            "target/debug/*"
+            "target/release/*"
+          ];
           repository = "/data/backup/home/${config.home.username}";
           extraBackupArgs = [ "--compression auto" ];
           pruneOpts = [ "--keep-last 4" ];
