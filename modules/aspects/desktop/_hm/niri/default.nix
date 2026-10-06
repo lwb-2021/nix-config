@@ -35,6 +35,7 @@
 
       debug = {
         honor-xdg-activation-with-invalid-serial = true;
+        ignore-drm-device = "/dev/dri/by-path/pci-0000:01:00.0-render";
       };
     };
   };
@@ -45,7 +46,10 @@
         default = [ "gtk" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
         "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        "org.freedesktop.impl.portal.Settings" = [ "gtk" "gnome" ];
+        "org.freedesktop.impl.portal.Settings" = [
+          "gtk"
+          "gnome"
+        ];
       };
     };
   };
