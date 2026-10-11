@@ -12,7 +12,6 @@
     "placements" = {
       "widget-overflow-fixed-list" = [ ];
       "nav-bar" = [
-        "_3c078156-979c-498b-8990-85f7987dd929_-browser-action"
         "back-button"
         "forward-button"
         "stop-reload-button"
@@ -24,13 +23,25 @@
         "fxa-toolbar-menu-button"
         "unified-extensions-button"
         "clipper_obsidian_md-browser-action"
-        "zotero_chnm_gmu_edu-browser-action"
+        # "zotero_chnm_gmu_edu-browser-action"
       ];
       "toolbar-menubar" = [ "menubar-items" ];
       "vertical-tabs" = [ ];
       "PersonalToolbar" = [ "personal-bookmarks" ];
     };
   };
+
+  "sidebar.verticalTabs" = true;
+  "sidebar.visibility" = "expand-on-hover";
+  "Sidebar.main.tools" = builtins.toJSON [
+    "{531906d3-e22f-4a6c-a102-8057b88a1a63}"
+    "history"
+    "bookmarks"
+    "syncedtabs"
+  ];
+
+  "extensions.webextensions.ExtensionStorageIDB.enabled" = false;
+  "browser.nova.enabled" = true;
 
   "media.autoplay.default" = 5;
 

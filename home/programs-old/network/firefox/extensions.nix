@@ -13,7 +13,6 @@
 
     # UI
     darkreader
-    sidebery
 
     # Connector
     browserpass
@@ -29,28 +28,10 @@
 
     # Vim
     vimium-c
+    newtab-adapter
 
     tampermonkey # Script
 
   ];
-  settings = {
-    "{3c078156-979c-498b-8990-85f7987dd929}".settings = {
-      settings = {
-        navBarLayout = "hidden";
-
-        previewTabs = true;
-        previewTabsMode = "p";
-        previewTabsPageModeFallback = "n";
-
-        snapLimit = 3;
-        snapLimitUnit = "snap";
-
-        pinnedNoUnload = false;
-
-        hideFoldedTabs = true;
-
-        syncUseFirefox = false;
-      };
-    };
-  };
+  settings = { };
 }
