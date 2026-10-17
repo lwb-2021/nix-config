@@ -14,7 +14,8 @@
           allowInterfaces = lib.flatten (
             map (c: c.unix_device_names) config.hardware.facter.report.hardware.network_controller
           );
-          extraConfig = "waitip 4";
+          wait = "ipv4";
+          extraConfig = "nodelay";
         };
 
         nftables = {
