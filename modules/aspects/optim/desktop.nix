@@ -22,7 +22,9 @@
         ACTION=="add|change", KERNEL=="nvme[0-9]*n[0-9]*", ATTR{queue/scheduler}="kyber"
       '';
 
-      system.etc.overlay.enable = true;
+      system.etc.overlay = {
+        enable = true;
+      };
       boot.kernelParams = [ "overlay.index=off" ];
     };
     hm = { };
