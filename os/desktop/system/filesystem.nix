@@ -14,7 +14,6 @@
     hideMounts = true;
 
     directories = [
-      "/etc/NetworkManager/system-connections"
       "/root"
     ];
 

@@ -114,7 +114,6 @@
     extraGroups = [
       "wheel"
       "gamemode"
-      "networkmanager"
       "plugdev"
       "dialout"
       "podman"

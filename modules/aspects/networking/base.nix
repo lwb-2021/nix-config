@@ -1,8 +1,28 @@
 { ... }: {
   flake.aspects.networking = {
     nixos = { config, lib, ... }: {
-      networking.nftables = {
-        enable = true;
+      networking = {
+        wireless.iwd = {
+          enable = lib.mkDefault (
+            lib.any (
+              c: (c.sub_class.name or "") == "WLAN controller"
+            ) config.hardware.facter.report.hardware.network_controller
+          );
+        };
+
+        dhcpcd = {
+          allowInterfaces = lib.flatten (
+            map (c: c.unix_device_names) config.hardware.facter.report.hardware.network_controller
+          );
+          extraConfig = "waitip 4";
+        };
+
+        nftables = {
+          enable = true;
+        };
+      };
+      environment.persistence."/data/persistence/system" = {
+        # directories = [ "/var/lib/iwd" ];
       };
 
     };
