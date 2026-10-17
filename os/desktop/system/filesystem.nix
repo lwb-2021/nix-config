@@ -51,7 +51,6 @@
   };
   systemd.tmpfiles.rules = [
     "d /data/backup 0777 root root -"
-    "d /data/persistence/hermes 0770 hermes hermes -"
   ];
 
   services.btrfs.autoScrub = {
