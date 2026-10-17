@@ -28,7 +28,7 @@ let
     };
   mkTmpfileRule =
     parent: name: value:
-    "C+ ${parent}/${name} ${value.mode} - - - ${value.source}";
+    "C+ ${parent}/${name} ${value.mode} ${config.home.username} users - ${value.source}";
   mapOptionToRules = parent: cfg: builtins.attrValues (builtins.mapAttrs (mkTmpfileRule parent) cfg);
 in
 {
