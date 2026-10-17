@@ -30,7 +30,7 @@
   data.persistence.files = [
     {
       file = ".ssh/known_hosts";
-      method = "symlink";
+      how = "symlink";
     }
     ".ssh/config.dynamic"
   ];
