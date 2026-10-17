@@ -35,13 +35,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence = {
-      url = "github:nix-community/impermanence";
-      inputs = {
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
     import-tree = {
       url = "github:denful/import-tree";
     };
@@ -86,6 +79,9 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
+    };
+    preservation = {
+      url = "github:nix-community/preservation";
     };
     selector4nix = {
       url = "github:StarryReverie/selector4nix";

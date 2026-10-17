@@ -10,19 +10,27 @@
     ];
   };
 
-  environment.persistence."/data/persistence/system" = {
-    hideMounts = true;
-
+  systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+  preservation.preserveAt."/data/persistence/system" = {
     directories = [
-      "/root"
+      {
+        directory = "/root";
+        mode = "0700";
+      }
     ];
 
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_ed25519_key.pub"
-      "/etc/ssh/ssh_host_ed25519_key"
+      {
+        file = "/etc/ssh/ssh_host_ed25519_key";
+        mode = "0600"; # sshd refuses world-readable host keys
+      }
       "/etc/ssh/ssh_host_rsa_key.pub"
-      "/etc/ssh/ssh_host_rsa_key"
+      {
+        file = "/etc/ssh/ssh_host_rsa_key";
+        mode = "0600";
+      }
     ];
   };
 

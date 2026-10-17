@@ -21,9 +21,7 @@
           enable = true;
         };
       };
-      environment.persistence."/data/persistence/system" = {
-        # directories = [ "/var/lib/iwd" ];
-      };
+      # preservation.preserveAt."/data/persistence/system".directories = [ "/var/lib/iwd" ];
 
     };
     hm = { };

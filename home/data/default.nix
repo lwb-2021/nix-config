@@ -1,4 +1,4 @@
-{ config, lib, ... }@param:
+{ config, lib, ... }:
 {
 
   imports = [
@@ -7,25 +7,10 @@
     ./syncthing.nix
   ];
 
+  # data.persistence / data.local are declared by the persistence aspect
+  # (modules/aspects/persistence) and fed into preservation on the NixOS side.
   options = with lib; {
     data = {
-      persistence = {
-        directories = mkOption {
-          type = types.listOf types.anything;
-        };
-        files = mkOption {
-          type = types.listOf types.anything;
-        };
-      };
-      local = {
-        directories = mkOption {
-          type = types.listOf types.anything;
-        };
-        files = mkOption {
-          type = types.listOf types.anything;
-        };
-      };
-
       sync = {
         folders = mkOption {
           type = types.listOf types.str;
@@ -39,25 +24,6 @@
     };
   };
   config = {
-    home =
-      if (param ? osConfig) then
-        {
-          persistence = {
-            "/data/persistence" = {
-              hideMounts = true;
-              directories = config.data.persistence.directories;
-              files = config.data.persistence.files;
-            };
-            "/data/local" = {
-              hideMounts = true;
-              directories = config.data.local.directories;
-              files = config.data.local.files;
-            };
-          };
-        }
-      else
-        { };
-
     services.restic = {
       enable = true;
       backups = {

@@ -11,6 +11,7 @@ let
       optim-desktop
       desktop
       networking
+      persistence
     ]
     ++ [
       ../../../modules-leagcy/universal
@@ -46,12 +47,11 @@ in
         optim-desktop
         desktop
         networking
+        persistence
       ]
       ++ [
         ../../../modules-leagcy/universal
         ../../../modules-leagcy/os
-
-        inputs.impermanence.nixosModules.impermanence
 
         inputs.sops-nix.nixosModules.sops
         inputs.nix-flatpak.nixosModules.nix-flatpak
@@ -66,7 +66,7 @@ in
           networking.hostName = "lwb";
 
           hardware.facter.reportPath = ./facter.json;
-          hardware.facter.detected.boot.graphics.kernelModules = lib.mkForce [ "i915" ]; # Remove NVIDIA from initrd
+          hardware.facter.detected.boot.graphics.kernelModules = lib.mkForce [ ]; # Disable early kms
         })
         {
 
