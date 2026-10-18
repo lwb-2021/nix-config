@@ -42,6 +42,8 @@
             "https://nix-community.cachix.org"
             "https://noctalia.cachix.org"
             "https://selector4nix.cachix.org/"
+
+            "https://cache.numtide.com"
           ]
         );
 
@@ -59,6 +61,7 @@
     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     "selector4nix.cachix.org-1:wovVlT07In5JCVz2tFgxPQTLpnN8hZT6P/RwfFcz3KE="
 
+    "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
   ];
 
 }
