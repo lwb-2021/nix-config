@@ -38,6 +38,13 @@
     import-tree = {
       url = "github:denful/import-tree";
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+      };
+    };
     niri = {
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
