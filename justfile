@@ -35,5 +35,6 @@ switch-host hostname:
   print "\n{{ style("bold", "→ Running switch") }}\n"
   let out = nom build ".#nixosConfigurations.{{hostname}}.config.system.build.toplevel" --no-link --print-out-paths --keep-going
 
-  sudo $"($out)/bin/switch-to-configuration" test
-  sudo $"($out)/bin/switch-to-configuration" boot
+  sudo /run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set $out
+
+  sudo $"($out)/bin/switch-to-configuration" switch
