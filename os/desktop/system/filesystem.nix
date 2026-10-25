@@ -34,14 +34,6 @@
     ];
   };
 
-  system.etc.overlay = {
-    enable = true;
-  };
-
-  services.userborn = {
-    enable = true;
-  };
-
   environment.variables.NIX_REMOTE = "daemon";
 
   systemd.services.nix-daemon = {
