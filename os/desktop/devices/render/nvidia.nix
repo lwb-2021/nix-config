@@ -26,4 +26,12 @@
     };
   };
 
+  # Removes the dGPU's HDMI/DP audio function so the GPU can reach D3cold and
+  # power off when idle (snd_hda_intel otherwise pins it at power/control=on,
+  # and nixpkgs only strips these on kernels older than 5.5). Trade-off: HDMI/DP
+  # audio output stops working; built-in speakers are unaffected.
+  # Disabled for now - decide whether the idle power saving is worth the audio.
+  # services.udev.extraRules = ''
+  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
+  # '';
 }
