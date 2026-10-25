@@ -20,7 +20,10 @@
     ];
 
     files = [
-      "/etc/machine-id"
+      {
+        file = "/etc/machine-id";
+        inInitrd = true;
+      }
       "/etc/ssh/ssh_host_ed25519_key.pub"
       {
         file = "/etc/ssh/ssh_host_ed25519_key";
