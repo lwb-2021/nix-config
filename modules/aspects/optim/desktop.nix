@@ -22,6 +22,9 @@
         ACTION=="add|change", KERNEL=="nvme[0-9]*n[0-9]*", ATTR{queue/scheduler}="kyber"
       '';
 
+      # Disable systemd-boot-random-seed, RDRAND can be used to setup crng
+      systemd.services.systemd-boot-random-seed.enable = false;
+
       imports = [ ./_universal.nix ];
     };
     hm = { };

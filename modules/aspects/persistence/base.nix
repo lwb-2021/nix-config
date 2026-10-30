@@ -6,7 +6,12 @@
 
   flake.aspects.persistence = {
     nixos =
-      { config, inputs, lib, ... }:
+      {
+        config,
+        inputs,
+        lib,
+        ...
+      }:
       let
         hmUsers = lib.attrByPath [ "home-manager" "users" ] { } config;
         mkUserPreservations =
@@ -15,6 +20,9 @@
           "x-gvfs-hide"
           "x-gdu.hide"
         ];
+        # Peak observed: 86 mount events within one second. 200 leaves room to
+        # spare while still catching a genuinely runaway mount loop.
+        MOUNT_RATE_LIMIT = "SYSTEMD_DEFAULT_MOUNT_RATE_LIMIT_BURST=200";
       in
       {
         imports = [ inputs.preservation.nixosModules.default ];
@@ -38,6 +46,19 @@
             };
           };
         };
+
+        systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+
+        # preservation creates one bind mount per preserved path, and they are
+        # all set up in a single burst: 86 mounts land within one second here.
+        # systemd's mount event source is rate limited to 5 per second by
+        # default, so everything past the fifth waits out a full 1s penalty
+        # window (src/core/mount.c: "as it stalls the boot sequence on busy
+        # systems"). Raise it for both PID 1 of the initrd and of the main
+        # system; `ManagerEnvironment` is what lands in systemd's own environ,
+        # which is what secure_getenv() reads.
+        boot.initrd.systemd.settings.Manager.ManagerEnvironment = [ MOUNT_RATE_LIMIT ];
+        systemd.settings.Manager.ManagerEnvironment = [ MOUNT_RATE_LIMIT ];
       };
 
     # HM-facing side of preservation (itself has no HM module).

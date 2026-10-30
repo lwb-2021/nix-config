@@ -10,7 +10,12 @@
     ];
   };
 
-  systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+  fileSystems."/boot/efi".options = [
+    "defaults"
+    "x-systemd.automount"
+    "x-systemd.idle-timeout=60"
+  ];
+
   preservation.preserveAt."/data/persistence/system" = {
     directories = [
       {

@@ -2,9 +2,6 @@
   system.etc.overlay = {
     enable = true;
   };
-  # Preload loop to optimize startup speed with etc overlay enabled
-  boot.initrd.kernelModules = [ "loop" ];
-
   services.userborn = {
     enable = true;
   };
