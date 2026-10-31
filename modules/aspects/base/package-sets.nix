@@ -1,8 +1,7 @@
 { ... }: {
 
   flake-file.inputs = {
-    nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=nixos-unstable";
-    nixpkgs-master.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?shallow=true&ref=master";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nur.url = "github:nix-community/NUR";
 
     chaotic = {

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.noCuda; [
     nomacs
   ];
   xdg.mimeApps.defaultApplications = {

@@ -10,9 +10,6 @@
         cudaSupport = false;
       };
     };
-    master = import inputs.nixpkgs-master {
-      localSystem = "x86_64-linux";
-    };
   })
   (final: prev: {
     thunar-archive-plugin = prev.thunar-archive-plugin.overrideAttrs (_: {
@@ -36,7 +33,7 @@
   (final: prev: {
   })
   (final: prev: {
-    niri = final.master.niri.overrideAttrs (old: {
+    niri = prev.niri.overrideAttrs (old: {
       # TODO: https://github.com/niri-wm/niri/pull/179
       patches = (old.patches or [ ]) ++ [
         ./niri-shm-fallback.patch

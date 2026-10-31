@@ -33,12 +33,6 @@
       };
 
     };
-    initrd = {
-      systemd = {
-        enable = true;
-      };
-    };
-    # UKI is automatically enabled
   };
   environment.systemPackages = with pkgs; [
     sbctl
