@@ -4,14 +4,8 @@
   ];
   services.selector4nix = {
     enable = true;
-    enablePersistentCaching = true;
     configureSubstituter = "overwrite";
     settings = {
-
-      network = {
-        ignore_nar_info_error = true;
-      };
-
       substituters =
         (map
           (url: {
