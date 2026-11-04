@@ -54,9 +54,7 @@ in
 
     # Development
     ./programs-old/development
-    ./programs-old/development/version-control.nix
     ./programs-old/development/editors/code.nix
-    ./programs-old/development/editors/neovim.nix
     ./programs-old/development/editors/idea.nix
 
     ./programs-old/development/languages/java.nix
