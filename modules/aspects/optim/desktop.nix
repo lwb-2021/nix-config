@@ -4,9 +4,9 @@
       boot.kernelPackages = pkgs.linuxPackages_cachyos;
       hardware.nvidia.package = pkgs.nvidia_cachyos;
 
-      services.scx = {
+      services.scx-loader = {
         enable = true;
-        scheduler = "scx_bpfland";
+        config.default_sched = "scx_bpfland";
       };
       services.ananicy = {
         enable = true;
