@@ -17,14 +17,16 @@ switch: write-flake (switch-host current-hostname)
 checkhealth: 
   nix run github:DeterminateSystems/flake-checker --quiet
 
-
+[env("NIX_CONFIG", "access-tokens = github.com=" + `pass token/github`)]
 write-flake: 
   nix run ".#write-flake"
 
+[env("NIX_CONFIG", "access-tokens = github.com=" + `pass token/github`)]
 update: write-flake
   nix flake update
 
-update-dots: write-flake
+[env("NIX_CONFIG", "access-tokens = github.com=" + `pass token/github`)]
+update-dots: write-flake  
   nix flake update dotfiles
 
 
