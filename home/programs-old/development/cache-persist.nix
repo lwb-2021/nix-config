@@ -4,8 +4,6 @@
     ".cargo"
     ".android" # TODO
 
-    ".local/state" # TODO
-
     ".local/share/direnv" # TODO
 
     ".config/.android" # TODO

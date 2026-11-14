@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.desktop.noctalia;
+  persist-state = name: ".local/state/noctalia/${name}";
 in
 {
   programs.noctalia = {
@@ -22,4 +23,20 @@ in
 
   desktop.default-applications.locker = lib.mkIf cfg.enable "noctalia msg session lock";
 
+  data.local.directories = map persist-state [
+    "clipboard"
+    "community-palettes"
+    "community-templates"
+    "notification_history_assets"
+    "plugins"
+  ];
+  data.local.files = map persist-state [
+    "notification_history.enc"
+    "screen_time.json"
+    "state.toml"
+  ];
+
+  systemd.user.tmpfiles.rules = [
+    "f ${config.xdg.stateHome}/noctalia/.setup-complete 0644 - -"
+  ];
 }

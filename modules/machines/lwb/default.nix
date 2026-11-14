@@ -7,8 +7,10 @@ let
     [
       base
       theming
+      data
       development
       optim-desktop
+      shell
       desktop
       networking
       persistence
@@ -43,9 +45,11 @@ in
       [
         base
         theming
+        data
         development
         optim-desktop
         desktop
+        shell
         networking
         persistence
       ]

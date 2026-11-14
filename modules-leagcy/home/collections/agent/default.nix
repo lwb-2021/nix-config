@@ -22,13 +22,6 @@
       ext-config = name: "${pi-config-root}/extensions/${name}/config.json";
     in
     lib.mkIf cfg.enable {
-
-      collections.modern-shell.enable = lib.mkDefault true;
-
-      home.packages = with pkgs; [
-
-      ];
-
       programs.aichat.enable = true;
       programs.pi-coding-agent = {
         enable = true;

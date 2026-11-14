@@ -33,7 +33,18 @@
           "text/plain" = "neovide.desktop";
           "text/markdown" = "neovide.desktop";
         };
-        data.local.directories = [ ".local/share/nvim" ];
+
+        data.local.directories =
+          let
+            persist-state = name: ".local/state/nvim/${name}";
+          in
+          map persist-state [
+            "backup"
+            "blink"
+            "lazy"
+            "shada"
+            "undo"
+          ] ++ [".local/share/nvim"];
       };
   };
 }

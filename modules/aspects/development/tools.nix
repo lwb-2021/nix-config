@@ -29,6 +29,10 @@
         nixd
       ];
 
+      data.local.files = [
+        ".local/state/gh/device-id"
+      ];
+
     };
   };
 }

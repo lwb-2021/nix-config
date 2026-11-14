@@ -10,7 +10,10 @@ let
 in
 {
   data.persistence.directories = [ ".local/share/vicinae" ];
-  data.local.directories = [ ".cache/vicinae" ]; # cache file-indexer.db
+  data.local.directories = [
+    ".cache/vicinae" # cache file-indexer.db
+    ".local/state/vicinae"
+  ];
   sops.templates."vicinae.json".content = builtins.toJSON {
     providers = {
       "@knoopx/${exts.nix.name}" = {

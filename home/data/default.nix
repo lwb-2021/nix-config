@@ -4,7 +4,6 @@
   imports = [
     ./preclude.nix
     ./rclone.nix
-    ./syncthing.nix
   ];
 
   # data.persistence / data.local are declared by the persistence aspect

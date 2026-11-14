@@ -24,6 +24,14 @@
 
           "Workspace"
 
+          ".local/state/wireplumber"
+          ".local/state/nix-output-monitor"
+
+          # TODO: are these required?
+          ".local/state/home-manager"
+          ".local/state/nix"
+          ".local/state/lazygit"
+          ".local/state/keepassxc"
         ]
         (lib.mkIf (params.osConfig.programs.steam.enable or false) [
           ".steam"
