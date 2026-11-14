@@ -15,7 +15,7 @@
     darkreader
 
     # Connector
-    browserpass
+    keepassxc-browser
     zotero-connector
     web-clipper-obsidian
 

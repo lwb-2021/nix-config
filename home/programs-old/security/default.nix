@@ -26,10 +26,6 @@
       PASSWORD_STORE_DIR = "${config.home.homeDirectory}/.local/share/password-store";
     };
   };
-  programs.browserpass = {
-    enable = true;
-    browsers = [ "firefox" ];
-  };
   # services.pass-secret-service.enable = true;
 
   home.packages = with pkgs; [

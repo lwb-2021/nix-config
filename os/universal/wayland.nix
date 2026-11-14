@@ -37,6 +37,8 @@
     xarchiver
 
     ffmpegthumbnailer
+
+    keepassxc # For polkit
   ];
 
 }
