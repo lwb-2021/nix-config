@@ -13,14 +13,24 @@
   battery.warning_threshold = 20;
   theme = {
     mode = "dark";
-    source = "builtin";
-    builtin = "Catppuccin";
+    source = "community";
+    community_palette = "Catppuccin Mocha Mauve-Lavender";
 
     templates = {
       enable_builtin_templates = true;
-      builtin_ids = [ "kitty" "niri" "starship" ];
+      builtin_ids = [
+        "kitty"
+        "niri"
+        "starship"
+        "qt"
+        "kcolorscheme"
+      ];
       enable_community_templates = true;
-      community_ids = [ "vicinae" "fzf" "yazi"];
+      community_ids = [
+        "vicinae"
+        "fzf"
+        "yazi"
+      ];
     };
   };
 

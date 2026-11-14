@@ -1,0 +1,147 @@
+diff --git a/assets/templates/kde/kcolorscheme.colors b/assets/templates/kde/kcolorscheme.colors
+index f2bf230db9..dc84ef9ef7 100644
+--- a/assets/templates/kde/kcolorscheme.colors
++++ b/assets/templates/kde/kcolorscheme.colors
+@@ -32,12 +32,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_surface.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Complementary]
+ BackgroundAlternate={{colors.surface_container_low.default.rgb_csv}}
+@@ -46,12 +46,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_primary_container.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Header]
+ BackgroundAlternate={{colors.surface.default.rgb_csv}}
+@@ -60,12 +60,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_surface.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Header][Inactive]
+ BackgroundAlternate={{colors.surface_container.default.rgb_csv}}
+@@ -74,12 +74,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_surface.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Selection]
+ BackgroundAlternate={{colors.surface_container_low.default.rgb_csv}}
+@@ -88,12 +88,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.on_primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
+-ForegroundNegative={{colors.error_container.default.rgb_csv}}
+-ForegroundNeutral={{colors.tertiary_container.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
++ForegroundNegative={{colors.error.default.rgb_csv}}
++ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_primary.default.rgb_csv}}
+-ForegroundPositive={{colors.tertiary_container.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundPositive={{colors.tertiary.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Tooltip]
+ BackgroundAlternate={{colors.surface.default.rgb_csv}}
+@@ -102,26 +102,26 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_background.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:View]
+ BackgroundAlternate={{colors.surface_container.default.rgb_csv}}
+ BackgroundNormal={{colors.background.default.rgb_csv}}
+-DecorationFocus={{colors.on_primary_container.default.rgb_csv}}
+-DecorationHover={{colors.on_primary.default.rgb_csv}}
++DecorationFocus={{colors.primary.default.rgb_csv}}
++DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_background.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [Colors:Window]
+ BackgroundAlternate={{colors.primary_container.default.rgb_csv}}
+@@ -130,12 +130,12 @@ DecorationFocus={{colors.primary.default.rgb_csv}}
+ DecorationHover={{colors.primary.default.rgb_csv}}
+ ForegroundActive={{colors.primary.default.rgb_csv}}
+ ForegroundInactive={{colors.on_surface_variant.default.rgb_csv}}
+-ForegroundLink={{colors.secondary.default.rgb_csv}}
++ForegroundLink={{colors.primary.default.rgb_csv}}
+ ForegroundNegative={{colors.error.default.rgb_csv}}
+ ForegroundNeutral={{colors.tertiary.default.rgb_csv}}
+ ForegroundNormal={{colors.on_background.default.rgb_csv}}
+ ForegroundPositive={{colors.tertiary.default.rgb_csv}}
+-ForegroundVisited={{colors.on_secondary_container.default.rgb_csv}}
++ForegroundVisited={{colors.primary.default.rgb_csv}}
+ 
+ [WM]
+ activeBackground={{colors.primary_container.default.rgb_csv}}
+diff --git a/assets/templates/qt/qtct.conf b/assets/templates/qt/qtct.conf
+index b0f5f7d427..2c2050e472 100644
+--- a/assets/templates/qt/qtct.conf
++++ b/assets/templates/qt/qtct.conf
+@@ -2,7 +2,8 @@
+ #https://doc.qt.io/archives/qt-5.15/qpalette.html
+ #https://doc.qt.io/qt-6/qpalette.html - Qt6 didn't add/delete/change any of the color functions or docs
+ # functions that correspond to the colors definition location
+-# windowText,button,light,midlight,dark,mid,text,brightText,buttonText,base,window,shadow,highlight,highlightedText,link,linkVisited,alternateBase,NO_IDEA (just use some sane default),toolTipBase,toolTipText,placeholderText,accent
+-active_colors={{colors.on_background.default.hex}}, {{colors.surface.default.hex}}, #ffffff, #cacaca, #9f9f9f, #b8b8b8, {{colors.on_background.default.hex}}, #ffffff, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.background.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.secondary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.primary.default.hex}}
+-disabled_colors={{colors.on_background.default.hex}}, {{colors.surface.default.hex}}, #ffffff, #cacaca, #9f9f9f, #b8b8b8, {{colors.on_background.default.hex}}, #ffffff, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.background.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.secondary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.primary.default.hex}}
+-inactive_colors={{colors.on_background.default.hex}}, {{colors.surface.default.hex}}, #ffffff, #cacaca, #9f9f9f, #b8b8b8, {{colors.on_background.default.hex}}, #ffffff, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.background.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.secondary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_variant.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.primary.default.hex}}
++# Roles: windowText, button, light, midlight, dark, mid, text, brightText, buttonText, base, window, shadow, highlight, highlightedText, link, linkVisited, alternateBase, NO_IDEA, toolTipBase, toolTipText, placeholderText, accent
++
++active_colors={{colors.on_background.default.hex}}, {{colors.surface_container_high.default.hex}}, {{colors.outline.default.hex}}, {{colors.outline_variant.default.hex}}, {{colors.surface_container_lowest.default.hex}}, {{colors.surface_container_low.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.primary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface_variant.default.hex}}, {{colors.primary.default.hex}}
++disabled_colors={{colors.on_background.default.hex}}, {{colors.surface_container_high.default.hex}}, {{colors.outline.default.hex}}, {{colors.outline_variant.default.hex}}, {{colors.surface_container_lowest.default.hex}}, {{colors.surface_container_low.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.primary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface_variant.default.hex}}, {{colors.primary.default.hex}}
++inactive_colors={{colors.on_background.default.hex}}, {{colors.surface_container_high.default.hex}}, {{colors.outline.default.hex}}, {{colors.outline_variant.default.hex}}, {{colors.surface_container_lowest.default.hex}}, {{colors.surface_container_low.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, {{colors.background.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.shadow.default.hex}}, {{colors.primary_container.default.hex}}, {{colors.on_primary_container.default.hex}}, {{colors.primary.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.surface.default.hex}}, {{colors.surface_container.default.hex}}, {{colors.on_background.default.hex}}, {{colors.on_surface_variant.default.hex}}, {{colors.primary.default.hex}}
