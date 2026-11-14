@@ -18,6 +18,7 @@
           enable = true;
           settings = {
             maximized = false;
+            startup-message-capture = false;
             font = {
               normal = "monospace";
               size = config.theming.fonts.sizes.terminal;
