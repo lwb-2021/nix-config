@@ -11,13 +11,9 @@
     package = pkgs.pass.withExtensions (
       ps: with ps; [
         pass-otp
+        # TODO: https://github.com/roddhjav/pass-import/pull/232
         (pass-import.overrideAttrs {
-          patches = [
-            (pkgs.fetchpatch {
-              url = "https://github.com/roddhjav/pass-import/pull/232.diff";
-              hash = "sha256-Dbtvadd0TeJOKwi0FbfS6giV4Vj8p+TdSALQpTK6sXw=";
-            })
-          ];
+          patches = [ ./0001-audit-tolerate-long-passwords.patch ];
         })
         pass-update
       ]
