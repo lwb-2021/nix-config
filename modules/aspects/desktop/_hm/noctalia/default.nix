@@ -8,9 +8,13 @@ let
   cfg = config.desktop.noctalia;
   persist-state = name: ".local/state/noctalia/${name}";
 in
-{
+lib.mkIf cfg.enable {
   programs.noctalia = {
-    enable = cfg.enable;
+    enable = true;
+    systemd = {
+      enable = true;
+    };
+
     settings = import ./settings.nix;
 
     # TODO: https://github.com/noctalia-dev/noctalia/pull/3980
@@ -19,9 +23,7 @@ in
     });
   };
 
-  desktop.autostart.prepareCommands = lib.mkIf cfg.enable [ "noctalia &" ];
-
-  desktop.default-applications.locker = lib.mkIf cfg.enable "noctalia msg session lock";
+  desktop.default-applications.locker = "noctalia msg session lock";
 
   data.local.directories = map persist-state [
     "clipboard"

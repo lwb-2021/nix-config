@@ -10,6 +10,8 @@
     ./layout.nix
     ./rules.nix
   ];
+  wayland.systemd.target = "niri.service"; # IMPORTANT
+
   programs.niri = {
     enable = config.desktop.niri.enable;
     package = pkgs.niri;
@@ -39,6 +41,7 @@
       };
     };
   };
+
   xdg.portal = lib.mkIf config.desktop.niri.enable {
     extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
     config = {
