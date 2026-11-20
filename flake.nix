@@ -31,6 +31,10 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
+    flyline = {
+      url = "github:HalFrgrd/flyline";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
